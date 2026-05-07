@@ -94,6 +94,6 @@ $container = get_theme_mod( 'understrap_container_type' );
       <!--Site intro container end-->
     <?php else : ?>
       <!--page intro start-->    
-        <?php get_template_part( 'parts/page-intro' ); ?>    
+        <!-- <?php get_template_part( 'parts/page-intro' ); ?>     -->
       <!--page intro end-->
     <?php endif; ?>

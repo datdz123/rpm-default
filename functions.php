@@ -404,3 +404,20 @@ add_filter('wpseo_breadcrumb_single_link', function($link_output, $link) {
     }
     return $link_output; // Keep other links intact
 }, 10, 2);
+
+
+
+
+
+add_filter('acf/settings/save_json', function($path) {
+    return get_stylesheet_directory() . '/acf-json';
+});
+
+add_filter('acf/settings/load_json', function($paths) {
+
+    unset($paths[0]);
+
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+
+    return $paths;
+});

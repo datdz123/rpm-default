@@ -1532,4 +1532,37 @@ $('.rpm-items-wrap').slick({
     }
 });
 
+
+
+var tabs = document.querySelectorAll('.ctm-tab');
+	var panels = document.querySelectorAll('.ctm-panel');
+
+	if (!tabs.length) return;
+
+	tabs.forEach(function (tab) {
+		tab.addEventListener('click', function () {
+			var index = this.getAttribute('data-tab');
+
+			/* Bỏ active tất cả tabs */
+			tabs.forEach(function (t) {
+				t.classList.remove('is-active');
+				t.setAttribute('aria-selected', 'false');
+			});
+
+			/* Bỏ active tất cả panels */
+			panels.forEach(function (p) {
+				p.classList.remove('is-active');
+			});
+
+			/* Set active cho tab + panel được chọn */
+			this.classList.add('is-active');
+			this.setAttribute('aria-selected', 'true');
+
+			var target = document.querySelector('.ctm-panel[data-panel="' + index + '"]');
+			if (target) {
+				target.classList.add('is-active');
+			}
+		});
+	});
+
 }(jQuery));

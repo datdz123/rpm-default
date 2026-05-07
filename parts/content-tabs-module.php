@@ -49,12 +49,13 @@ defined( 'ABSPATH' ) || exit;
 	isolation: isolate;
 }
 
-.ctm-tab:hover {
+.ctm-tab:not(.is-active):hover {
 	background: #8a1720;
 }
 
 .ctm-tab.is-active {
 	overflow: visible;
+	cursor: default;
 }
 
 /* Mũi tên tam giác dưới tab active */
