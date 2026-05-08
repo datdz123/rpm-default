@@ -12672,8 +12672,582 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+
+                "layout_our_capabilities_module": {
+                    "key": "layout_our_capabilities_module",
+                    "name": "our_capabilities_module",
+                    "label": "Our Capabilities",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_oc_tab_content",
+                            "label": "Tab: Content",
+                            "name": "oc_tab_content",
+                            "type": "tab",
+                            "placement": "top"
+                        },
+                        {
+                            "key": "field_oc_section_title",
+                            "label": "Section Title",
+                            "name": "oc_section_title",
+                            "type": "text",
+                            "default_value": "Our Capabilities",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_oc_view_all_link",
+                            "label": "View All Link",
+                            "name": "oc_view_all_link",
+                            "type": "link",
+                            "return_format": "array",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_oc_capabilities",
+                            "label": "Capability Items",
+                            "name": "oc_capabilities",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Add Capability",
+                            "sub_fields": [
+                                {
+                                    "key": "field_oc_cap_icon_img",
+                                    "label": "Capability Icon",
+                                    "name": "icon_img",
+                                    "type": "image",
+                                    "instructions": "Upload icon cho capability (nên dùng định dạng SVG hoặc PNG trong suốt)",
+                                    "required": 0,
+                                    "return_format": "url",
+                                    "preview_size": "thumbnail",
+                                    "wrapper": { "width": "25" }
+                                },
+                                {
+                                    "key": "field_oc_cap_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "type": "text",
+                                    "wrapper": { "width": "25" }
+                                },
+                                {
+                                    "key": "field_oc_cap_desc",
+                                    "label": "Description",
+                                    "name": "description",
+                                    "type": "text",
+                                    "wrapper": { "width": "50" }
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        {
+                            "key": "field_oc_tab_media",
+                            "label": "Tab: Media",
+                            "name": "oc_tab_media",
+                            "type": "tab",
+                            "placement": "top"
+                        },
+                        {
+                            "key": "field_oc_media_image",
+                            "label": "Section Image",
+                            "name": "oc_media_image",
+                            "type": "image",
+                            "return_format": "url",
+                            "preview_size": "medium",
+                            "wrapper": { "width": "100" }
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_about_us_module": {
+                    "key": "layout_about_us_module",
+                    "name": "about_us_module",
+                    "label": "About Us",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_au_tab_content",
+                            "label": "Tab: Content",
+                            "name": "au_tab_content",
+                            "type": "tab",
+                            "placement": "top"
+                        },
+                        {
+                            "key": "field_au_section_title",
+                            "label": "Section Title",
+                            "name": "au_section_title",
+                            "type": "text",
+                            "default_value": "About Us",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_au_eyebrow",
+                            "label": "Eyebrow Text",
+                            "name": "au_eyebrow",
+                            "type": "text",
+                            "instructions": "Dòng nhỏ bên dưới tiêu đề",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_au_body",
+                            "label": "Body Copy",
+                            "name": "au_body",
+                            "type": "wysiwyg",
+                            "media_upload": 0,
+                            "toolbar": "basic",
+                            "wrapper": { "width": "100" }
+                        },
+                        {
+                            "key": "field_au_cta",
+                            "label": "Button (Learn More)",
+                            "name": "au_cta",
+                            "type": "link",
+                            "return_format": "array",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_au_tab_stats",
+                            "label": "Tab: Stats",
+                            "name": "au_tab_stats",
+                            "type": "tab",
+                            "placement": "top"
+                        },
+                        {
+                            "key": "field_au_stats",
+                            "label": "Stats",
+                            "name": "au_stats",
+                            "type": "repeater",
+                            "instructions": "Các số liệu thống kê (VD: 1994 / Founded, 150 / Employees...)",
+                            "layout": "table",
+                            "button_label": "Add Stat",
+                            "sub_fields": [
+                                {
+                                    "key": "field_au_stat_value",
+                                    "label": "Value",
+                                    "name": "value",
+                                    "type": "text",
+                                    "wrapper": { "width": "50" }
+                                },
+                                {
+                                    "key": "field_au_stat_label",
+                                    "label": "Label",
+                                    "name": "label",
+                                    "type": "text",
+                                    "wrapper": { "width": "50" }
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        },
+                        {
+                            "key": "field_au_tab_media",
+                            "label": "Tab: Media",
+                            "name": "au_tab_media",
+                            "type": "tab",
+                            "placement": "top"
+                        },
+                        {
+                            "key": "field_au_image",
+                            "label": "Section Image",
+                            "name": "au_image",
+                            "type": "image",
+                            "return_format": "url",
+                            "preview_size": "medium",
+                            "wrapper": { "width": "100" }
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_video_section_module": {
+                    "key": "layout_video_section_module",
+                    "name": "video_section_module",
+                    "label": "Video Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_vs_section_title",
+                            "label": "Section Title",
+                            "name": "vs_section_title",
+                            "type": "text",
+                            "default_value": "See Our Work in Action",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_vs_section_text",
+                            "label": "Section Description",
+                            "name": "vs_section_text",
+                            "type": "textarea",
+                            "rows": 3,
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_vs_thumbnail",
+                            "label": "Video Thumbnail Image",
+                            "name": "vs_thumbnail",
+                            "type": "image",
+                            "return_format": "url",
+                            "preview_size": "large",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_vs_video_url",
+                            "label": "Video URL",
+                            "name": "vs_video_url",
+                            "type": "url",
+                            "instructions": "Link YouTube hoặc Vimeo",
+                            "wrapper": { "width": "50" }
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_resources_section_module": {
+                    "key": "layout_resources_section_module",
+                    "name": "resources_section_module",
+                    "label": "Resources Section",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_rs_section_title",
+                            "label": "Section Title",
+                            "name": "rs_section_title",
+                            "type": "text",
+                            "default_value": "Resources",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_rs_view_all_link",
+                            "label": "View All Link",
+                            "name": "rs_view_all_link",
+                            "type": "link",
+                            "return_format": "array",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_rs_resources",
+                            "label": "Resource Cards",
+                            "name": "rs_resources",
+                            "type": "repeater",
+                            "instructions": "Thêm các bài viết/resource hiển thị ở trang chủ. Thông thường 3 thẻ.",
+                            "layout": "block",
+                            "button_label": "Add Resource",
+                            "sub_fields": [
+                                {
+                                    "key": "field_rs_res_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "type": "text",
+                                    "wrapper": { "width": "50" }
+                                },
+                                {
+                                    "key": "field_rs_res_url",
+                                    "label": "URL",
+                                    "name": "url",
+                                    "type": "url",
+                                    "wrapper": { "width": "50" }
+                                },
+                                {
+                                    "key": "field_rs_res_image",
+                                    "label": "Image",
+                                    "name": "image",
+                                    "type": "image",
+                                    "return_format": "url",
+                                    "preview_size": "medium",
+                                    "wrapper": { "width": "50" }
+                                },
+                                {
+                                    "key": "field_rs_res_excerpt",
+                                    "label": "Excerpt",
+                                    "name": "excerpt",
+                                    "type": "textarea",
+                                    "rows": 3,
+                                    "wrapper": { "width": "50" }
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_news_events_module": {
+                    "key": "layout_news_events_module",
+                    "name": "news_events_module",
+                    "label": "News & Events",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_ne_tab_content",
+                            "label": "Tab: Content",
+                            "name": "ne_tab_content",
+                            "type": "tab",
+                            "placement": "top"
+                        },
+                        {
+                            "key": "field_ne_section_title",
+                            "label": "Section Title",
+                            "name": "ne_section_title",
+                            "type": "text",
+                            "default_value": "News & Events",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_ne_section_text",
+                            "label": "Section Subtext",
+                            "name": "ne_section_text",
+                            "type": "text",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_ne_see_all_link",
+                            "label": "See All Updates Link",
+                            "name": "ne_see_all_link",
+                            "type": "link",
+                            "return_format": "array",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_ne_tab_cards",
+                            "label": "Tab: News Cards",
+                            "name": "ne_tab_cards",
+                            "type": "tab",
+                            "placement": "top"
+                        },
+                        {
+                            "key": "field_ne_updates",
+                            "label": "News Cards",
+                            "name": "ne_updates",
+                            "type": "repeater",
+                            "instructions": "Các thẻ tin tức hiển thị trong carousel. Nên có 4+ thẻ để carousel hoạt động.",
+                            "layout": "block",
+                            "button_label": "Add News Card",
+                            "sub_fields": [
+                                {
+                                    "key": "field_ne_update_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "type": "text",
+                                    "wrapper": { "width": "50" }
+                                },
+                                {
+                                    "key": "field_ne_update_url",
+                                    "label": "URL",
+                                    "name": "url",
+                                    "type": "url",
+                                    "wrapper": { "width": "50" }
+                                },
+                                {
+                                    "key": "field_ne_update_image",
+                                    "label": "Card Image",
+                                    "name": "image",
+                                    "type": "image",
+                                    "return_format": "url",
+                                    "preview_size": "medium",
+                                    "wrapper": { "width": "50" }
+                                },
+                                {
+                                    "key": "field_ne_update_desc",
+                                    "label": "Short Description",
+                                    "name": "description",
+                                    "type": "textarea",
+                                    "rows": 2,
+                                    "wrapper": { "width": "50" }
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_content_single_image_text_module": {
+                    "key": "layout_content_single_image_text_module",
+                    "name": "content_single_image_text_module",
+                    "label": "Content: Single Image + Text (Join Our Team)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_csit_icon_img",
+                            "label": "Section Icon",
+                            "name": "csit_icon_img",
+                            "type": "image",
+                            "instructions": "Upload icon cho section",
+                            "required": 0,
+                            "return_format": "url",
+                            "preview_size": "thumbnail",
+                            "wrapper": { "width": "25" }
+                        },
+                        {
+                            "key": "field_csit_title",
+                            "label": "Title",
+                            "name": "csit_title",
+                            "type": "text",
+                            "default_value": "Join Our Team",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_csit_subtitle",
+                            "label": "Subtitle",
+                            "name": "csit_subtitle",
+                            "type": "text",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_csit_description",
+                            "label": "Description",
+                            "name": "csit_description",
+                            "type": "wysiwyg",
+                            "media_upload": 0,
+                            "toolbar": "basic",
+                            "wrapper": { "width": "75" }
+                        },
+                        {
+                            "key": "field_csit_button",
+                            "label": "Button",
+                            "name": "csit_button",
+                            "type": "link",
+                            "return_format": "array",
+                            "wrapper": { "width": "25" }
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_full_width_cta_fig_module": {
+                    "key": "layout_full_width_cta_fig_module",
+                    "name": "full_width_cta_fig_module",
+                    "label": "Full Width CTA (Front Page)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_fwcf_show",
+                            "label": "Show This Section",
+                            "name": "fwcf_show",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 1,
+                            "instructions": "Bật/tắt hiển thị section này",
+                            "wrapper": { "width": "25" }
+                        },
+                        {
+                            "key": "field_fwcf_para_img",
+                            "label": "Parallax Background",
+                            "name": "fwcf_para_img",
+                            "type": "true_false",
+                            "ui": 1,
+                            "default_value": 0,
+                            "instructions": "Bật hiệu ứng parallax (fixed background)",
+                            "wrapper": { "width": "25" }
+                        },
+                        {
+                            "key": "field_fwcf_bg",
+                            "label": "Background Image",
+                            "name": "fwcf_bg",
+                            "type": "image",
+                            "return_format": "url",
+                            "preview_size": "medium",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_fwcf_heading",
+                            "label": "Heading",
+                            "name": "fwcf_heading",
+                            "type": "text",
+                            "wrapper": { "width": "100" }
+                        },
+                        {
+                            "key": "field_fwcf_description",
+                            "label": "Description",
+                            "name": "fwcf_description",
+                            "type": "wysiwyg",
+                            "media_upload": 0,
+                            "toolbar": "basic",
+                            "wrapper": { "width": "100" }
+                        },
+                        {
+                            "key": "field_fwcf_cta1",
+                            "label": "CTA Button 1 (Primary)",
+                            "name": "fwcf_cta1",
+                            "type": "link",
+                            "return_format": "array",
+                            "wrapper": { "width": "50" }
+                        },
+                        {
+                            "key": "field_fwcf_cta2",
+                            "label": "CTA Button 2 (Outline)",
+                            "name": "fwcf_cta2",
+                            "type": "link",
+                            "return_format": "array",
+                            "wrapper": { "width": "50" }
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_industries_we_serve_module_new": {
+                    "key": "layout_industries_we_serve_module_new",
+                    "name": "industries_we_serve_module_new",
+                    "label": "Industries We Serve",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_iws_section_title",
+                            "label": "Section Title",
+                            "name": "iws_section_title",
+                            "type": "text",
+                            "instructions": "Tiêu đề cho section (VD: Industries We Serve)",
+                            "required": 0,
+                            "wrapper": { "width": "50", "class": "", "id": "" },
+                            "default_value": "Industries We Serve",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_iws_industries",
+                            "label": "Industry Cards",
+                            "name": "iws_industries",
+                            "type": "repeater",
+                            "instructions": "Thêm từng ngành công nghiệp. 2 thẻ đầu sẽ hiển thị ở cột trái (size large), các thẻ còn lại ở cột phải (size small).",
+                            "layout": "block",
+                            "button_label": "Add Industry",
+                            "sub_fields": [
+                                {
+                                    "key": "field_iws_industry_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "type": "text",
+                                    "wrapper": { "width": "50" }
+                                },
+                                {
+                                    "key": "field_iws_industry_image",
+                                    "label": "Background Image",
+                                    "name": "image",
+                                    "type": "image",
+                                    "return_format": "url",
+                                    "preview_size": "medium",
+                                    "wrapper": { "width": "50" }
+                                },
+                                {
+                                    "key": "field_iws_industry_desc",
+                                    "label": "Description",
+                                    "name": "description",
+                                    "type": "textarea",
+                                    "rows": 3,
+                                    "wrapper": { "width": "50" }
+                                }
+                            ],
+                            "min": "",
+                            "max": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
+
             "min": "",
             "max": "",
             "button_label": "Add Content Module"
@@ -12780,5 +13354,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1778150001
+    "modified": 1778262000
 }

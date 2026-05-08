@@ -3082,9 +3082,9 @@
 												//if( !empty($image) ): 
 												?><!-- <figure><img src="<?php //echo $image['url'];
 																			?>" alt="<?php //echo $image['alt'];
-																									?>" title="<?php //echo $image['alt'];
-																																		?>"></figure> --><?php //endif; 
-																																														?>
+																						?>" title="<?php //echo $image['alt'];
+																												?>"></figure> --><?php //endif; 
+																																							?>
 
 												<?php if (get_sub_field('cvp2i_text')): ?>
 													<p><?php echo get_sub_field('cvp2i_text'); ?></p>
@@ -4047,89 +4047,446 @@
 			</section>
 		<?php elseif (get_row_layout() == 'content_tabs_module'): ?>
 			<?php if (have_rows('tabs')): ?>
-			<section class="ctm-section" id="content-tabs-module-<?php echo get_row_index(); ?>">
+				<section class="ctm-section" id="content-tabs-module-<?php echo get_row_index(); ?>">
 
-				<!-- ===== Tab Bar ===== -->
-				<div class="ctm-tabs" role="tablist">
-					<?php 
-					$tab_index = 0;
-					while (have_rows('tabs')): the_row(); ?>
-					<button class="ctm-tab <?php echo $tab_index === 0 ? 'is-active' : ''; ?>" role="tab" aria-selected="<?php echo $tab_index === 0 ? 'true' : 'false'; ?>" data-tab="<?php echo $tab_index; ?>" id="ctm-tab-<?php echo get_row_index() . '-' . $tab_index; ?>" aria-controls="ctm-panel-<?php echo get_row_index() . '-' . $tab_index; ?>">
-						<?php 
-						$tab_icon = get_sub_field('tab_icon');
-						if ($tab_icon): ?>
-						<span class="ctm-tab__icon">
-							<img src="<?php echo esc_url($tab_icon['url']); ?>" alt="<?php echo esc_attr($tab_icon['alt']); ?>" style="width: 28px; height: 28px; object-fit: contain;">
-						</span>
-						<?php endif; ?>
-						<?php echo esc_html(get_sub_field('tab_title')); ?>
-						<span class="ctm-tab__arrow"></span>
-					</button>
-					<?php 
-					$tab_index++;
-					endwhile; ?>
-				</div>
-
-				<!-- ===== Tab Content Panels ===== -->
-				<div class="ctm-content">
-					<?php 
-					$tab_index = 0;
-					while (have_rows('tabs')): the_row(); ?>
-					<div class="ctm-panel <?php echo $tab_index === 0 ? 'is-active' : ''; ?>" role="tabpanel" id="ctm-panel-<?php echo get_row_index() . '-' . $tab_index; ?>" aria-labelledby="ctm-tab-<?php echo get_row_index() . '-' . $tab_index; ?>" data-panel="<?php echo $tab_index; ?>">
-						<div class="ctm-info">
-							<div>
-								<?php if (get_sub_field('panel_title')): ?>
-								<h2 class="ctm-info__title"><?php echo esc_html(get_sub_field('panel_title')); ?></h2>
-								<?php endif; ?>
-								<?php if (get_sub_field('panel_desc')): ?>
-								<p class="ctm-info__desc"><?php echo nl2br(esc_html(get_sub_field('panel_desc'))); ?></p>
-								<?php endif; ?>
-							</div>
-							<?php 
-							$panel_link = get_sub_field('panel_link');
-							if ($panel_link): ?>
-							<a href="<?php echo esc_url($panel_link['url']); ?>" class="ctm-btn" target="<?php echo esc_attr($panel_link['target'] ? $panel_link['target'] : '_self'); ?>"><?php echo esc_html($panel_link['title']); ?></a>
-							<?php endif; ?>
-						</div>
-						<div class="ctm-visual">
-							<?php 
-							$panel_image = get_sub_field('panel_image');
-							if ($panel_image): ?>
-							<div class="ctm-image">
-								<img src="<?php echo esc_url($panel_image['url']); ?>" alt="<?php echo esc_attr($panel_image['alt']); ?>">
-							</div>
-							<?php endif; ?>
-							<div class="ctm-subcats">
-								<a href="<?php echo $panel_link ? esc_url($panel_link['url']) : '#'; ?>" class="ctm-subcat-parent">
-									<span class="ctm-subcat-parent__text"><?php echo esc_html(get_sub_field('panel_title')); ?></span>
-									<span class="ctm-subcat-parent__arrow">
-										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
-											<path d="M1 1l6 6-6 6" />
-										</svg>
+					<!-- ===== Tab Bar ===== -->
+					<div class="ctm-tabs" role="tablist">
+						<?php
+						$tab_index = 0;
+						while (have_rows('tabs')): the_row(); ?>
+							<button class="ctm-tab <?php echo $tab_index === 0 ? 'is-active' : ''; ?>" role="tab" aria-selected="<?php echo $tab_index === 0 ? 'true' : 'false'; ?>" data-tab="<?php echo $tab_index; ?>" id="ctm-tab-<?php echo get_row_index() . '-' . $tab_index; ?>" aria-controls="ctm-panel-<?php echo get_row_index() . '-' . $tab_index; ?>">
+								<?php
+								$tab_icon = get_sub_field('tab_icon');
+								if ($tab_icon): ?>
+									<span class="ctm-tab__icon">
+										<img src="<?php echo esc_url($tab_icon['url']); ?>" alt="<?php echo esc_attr($tab_icon['alt']); ?>" style="width: 28px; height: 28px; object-fit: contain;">
 									</span>
-								</a>
-								<?php if (have_rows('subcategories')): ?>
-								<div class="ctm-divider"></div>
-								<div class="ctm-subcat-children">
-									<?php while (have_rows('subcategories')): the_row(); ?>
-									<a href="<?php echo esc_url(get_sub_field('link')); ?>" class="ctm-subcat-child"><?php echo esc_html(get_sub_field('title')); ?></a>
-									<div class="ctm-divider"></div>
-									<?php endwhile; ?>
-								</div>
 								<?php endif; ?>
+								<?php echo esc_html(get_sub_field('tab_title')); ?>
+								<span class="ctm-tab__arrow"></span>
+							</button>
+						<?php
+							$tab_index++;
+						endwhile; ?>
+					</div>
+
+					<!-- ===== Tab Content Panels ===== -->
+					<div class="ctm-content">
+						<?php
+						$tab_index = 0;
+						while (have_rows('tabs')): the_row(); ?>
+							<div class="ctm-panel <?php echo $tab_index === 0 ? 'is-active' : ''; ?>" role="tabpanel" id="ctm-panel-<?php echo get_row_index() . '-' . $tab_index; ?>" aria-labelledby="ctm-tab-<?php echo get_row_index() . '-' . $tab_index; ?>" data-panel="<?php echo $tab_index; ?>">
+								<div class="ctm-info">
+									<div>
+										<?php if (get_sub_field('panel_title')): ?>
+											<h2 class="ctm-info__title"><?php echo esc_html(get_sub_field('panel_title')); ?></h2>
+										<?php endif; ?>
+										<?php if (get_sub_field('panel_desc')): ?>
+											<p class="ctm-info__desc"><?php echo nl2br(esc_html(get_sub_field('panel_desc'))); ?></p>
+										<?php endif; ?>
+									</div>
+									<?php
+									$panel_link = get_sub_field('panel_link');
+									if ($panel_link): ?>
+										<a href="<?php echo esc_url($panel_link['url']); ?>" class="ctm-btn" target="<?php echo esc_attr($panel_link['target'] ? $panel_link['target'] : '_self'); ?>"><?php echo esc_html($panel_link['title']); ?></a>
+									<?php endif; ?>
+								</div>
+								<div class="ctm-visual">
+									<?php
+									$panel_image = get_sub_field('panel_image');
+									if ($panel_image): ?>
+										<div class="ctm-image">
+											<img src="<?php echo esc_url($panel_image['url']); ?>" alt="<?php echo esc_attr($panel_image['alt']); ?>">
+										</div>
+									<?php endif; ?>
+									<div class="ctm-subcats">
+										<a href="<?php echo $panel_link ? esc_url($panel_link['url']) : '#'; ?>" class="ctm-subcat-parent">
+											<span class="ctm-subcat-parent__text"><?php echo esc_html(get_sub_field('panel_title')); ?></span>
+											<span class="ctm-subcat-parent__arrow">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14">
+													<path d="M1 1l6 6-6 6" />
+												</svg>
+											</span>
+										</a>
+										<?php if (have_rows('subcategories')): ?>
+											<div class="ctm-divider"></div>
+											<div class="ctm-subcat-children">
+												<?php while (have_rows('subcategories')): the_row(); ?>
+													<a href="<?php echo esc_url(get_sub_field('link')); ?>" class="ctm-subcat-child"><?php echo esc_html(get_sub_field('title')); ?></a>
+													<div class="ctm-divider"></div>
+												<?php endwhile; ?>
+											</div>
+										<?php endif; ?>
+									</div>
+								</div>
 							</div>
+						<?php
+							$tab_index++;
+						endwhile; ?>
+					</div>
+
+				</section>
+			<?php endif; ?>
+
+		<?php elseif (get_row_layout() == 'industries_we_serve_module_new'): ?>
+			<?php
+			$iws_title      = get_sub_field('iws_section_title') ?: 'Industries We Serve';
+			$iws_industries = get_sub_field('iws_industries');
+			?>
+			<?php if ($iws_industries): ?>
+				<section class="pdf-industries" aria-labelledby="pdf-industries-title-<?php echo $i; ?>">
+					<div class="pdf-industries__inner">
+						<header class="pdf-industries__header">
+							<h2 id="pdf-industries-title-<?php echo $i; ?>" class="pdf-industries__title"><?php echo esc_html($iws_title); ?></h2>
+						</header>
+
+						<div class="pdf-industries__grid" data-industries-grid>
+							<?php 
+							$industry_chunks = array_chunk($iws_industries, 5);
+							foreach ($industry_chunks as $chunk): 
+								$left_col  = array_slice($chunk, 0, 2);
+								$right_col = array_slice($chunk, 2, 3);
+							?>
+								<div class="pdf-industries__column">
+									<?php foreach ($left_col as $industry): ?>
+										<article class="pdf-industry-card pdf-industry-card--large" tabindex="0"
+											style="--industry-image: url('<?php echo esc_url($industry['image']); ?>');">
+											<div class="pdf-industry-card__content">
+												<h3 class="pdf-industry-card__title"><?php echo esc_html($industry['title']); ?></h3>
+												<p class="pdf-industry-card__description"><?php echo esc_html($industry['description'] ?? ''); ?></p>
+											</div>
+										</article>
+									<?php endforeach; ?>
+								</div>
+								
+								<?php if ($right_col): ?>
+									<div class="pdf-industries__column">
+										<?php foreach ($right_col as $industry): ?>
+											<article class="pdf-industry-card pdf-industry-card--small" tabindex="0"
+												style="--industry-image: url('<?php echo esc_url($industry['image']); ?>');">
+												<div class="pdf-industry-card__content">
+													<h3 class="pdf-industry-card__title"><?php echo esc_html($industry['title']); ?></h3>
+													<p class="pdf-industry-card__description"><?php echo esc_html($industry['description'] ?? ''); ?></p>
+												</div>
+											</article>
+										<?php endforeach; ?>
+									</div>
+								<?php endif; ?>
+							<?php endforeach; ?>
 						</div>
 					</div>
-					<?php 
-					$tab_index++;
-					endwhile; ?>
-				</div>
+				</section>
+			<?php endif; ?>
 
+		<?php elseif (get_row_layout() == 'our_capabilities_module'): ?>
+			<?php
+			$oc_title        = get_sub_field('oc_section_title') ?: 'Our Capabilities';
+			$oc_view_all     = get_sub_field('oc_view_all_link');
+			$oc_capabilities = get_sub_field('oc_capabilities');
+			$oc_image        = get_sub_field('oc_media_image');
+			?>
+			<section class="pdf-capabilities" aria-labelledby="pdf-capabilities-title-<?php echo $i; ?>">
+				<?php if ($oc_image): ?>
+					<div class="pdf-capabilities__media">
+						<img src="<?php echo esc_url($oc_image); ?>" alt="<?php echo esc_html($oc_title); ?>">
+					</div>
+				<?php endif; ?>
+
+				<div class="pdf-capabilities__content">
+					<div class="pdf-section-heading pdf-section-heading--light pdf-section-heading--split">
+						<h2 id="pdf-capabilities-title-<?php echo $i; ?>" class="pdf-section-heading__title"><?php echo esc_html($oc_title); ?></h2>
+						<?php if ($oc_view_all): ?>
+							<a class="pdf-button pdf-button--light"
+								href="<?php echo esc_url($oc_view_all['url']); ?>"
+								target="<?php echo esc_attr($oc_view_all['target'] ?: '_self'); ?>">
+								<?php echo esc_html($oc_view_all['title']); ?>
+							</a>
+						<?php endif; ?>
+					</div>
+
+					<div class="pdf-capabilities__rule" aria-hidden="true"></div>
+
+					<?php if ($oc_capabilities): ?>
+						<div class="pdf-capabilities__list">
+							<?php foreach ($oc_capabilities as $cap): ?>
+								<article class="pdf-capability-item">
+									<div class="pdf-capability-item__icon" aria-hidden="true">
+										<?php if ($cap['icon_img']): ?>
+											<img src="<?php echo esc_url($cap['icon_img']); ?>" alt="<?php echo esc_attr($cap['title']); ?>" style="width: 40px; height: 40px; object-fit: contain;">
+										<?php endif; ?>
+									</div>
+									<div class="pdf-capability-item__body">
+										<h3 class="pdf-capability-item__title"><?php echo esc_html($cap['title']); ?></h3>
+										<p class="pdf-capability-item__description"><?php echo esc_html($cap['description']); ?></p>
+									</div>
+								</article>
+							<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
+				</div>
 			</section>
+
+		<?php elseif (get_row_layout() == 'about_us_module'): ?>
+			<?php
+			$au_title   = get_sub_field('au_section_title') ?: 'About Us';
+			$au_eyebrow = get_sub_field('au_eyebrow');
+			$au_body    = get_sub_field('au_body');
+			$au_cta     = get_sub_field('au_cta');
+			$au_stats   = get_sub_field('au_stats');
+			$au_image   = get_sub_field('au_image');
+			?>
+			<section class="pdf-about" aria-labelledby="pdf-about-title-<?php echo $i; ?>">
+				<div class="pdf-about__inner">
+					<?php if ($au_image): ?>
+						<div class="pdf-about__media">
+							<img src="<?php echo esc_url($au_image); ?>" alt="<?php echo esc_html($au_title); ?>">
+						</div>
+					<?php endif; ?>
+
+					<div class="pdf-about__content">
+						<?php if ($au_stats): ?>
+							<div class="pdf-about__stats" aria-label="Company statistics">
+								<?php foreach ($au_stats as $stat): ?>
+									<div class="pdf-about-stat">
+										<strong class="pdf-about-stat__value"><?php echo esc_html($stat['value']); ?></strong>
+										<span class="pdf-about-stat__label"><?php echo esc_html($stat['label']); ?></span>
+									</div>
+								<?php endforeach; ?>
+							</div>
+						<?php endif; ?>
+
+						<div class="pdf-section-heading">
+							<h2 id="pdf-about-title-<?php echo $i; ?>" class="pdf-section-heading__title"><?php echo esc_html($au_title); ?></h2>
+							<?php if ($au_eyebrow): ?>
+								<p class="pdf-section-heading__eyebrow"><?php echo esc_html($au_eyebrow); ?></p>
+							<?php endif; ?>
+						</div>
+
+						<?php if ($au_body): ?>
+							<div class="pdf-about__copy">
+								<?php echo $au_body; ?>
+							</div>
+						<?php endif; ?>
+
+						<?php if ($au_cta): ?>
+							<a class="pdf-button"
+								href="<?php echo esc_url($au_cta['url']); ?>"
+								target="<?php echo esc_attr($au_cta['target'] ?: '_self'); ?>">
+								<?php echo esc_html($au_cta['title']); ?>
+							</a>
+						<?php endif; ?>
+					</div>
+				</div>
+			</section>
+
+		<?php elseif (get_row_layout() == 'video_section_module'): ?>
+			<?php
+			$vs_title     = get_sub_field('vs_section_title') ?: 'See Our Work in Action';
+			$vs_text      = get_sub_field('vs_section_text');
+			$vs_thumbnail = get_sub_field('vs_thumbnail');
+			$vs_video_url = get_sub_field('vs_video_url');
+			?>
+			<section class="pdf-video" aria-labelledby="pdf-video-title-<?php echo $i; ?>">
+				<div class="pdf-video__inner">
+					<header class="pdf-section-heading pdf-section-heading--center">
+						<h2 id="pdf-video-title-<?php echo $i; ?>" class="pdf-section-heading__title"><?php echo esc_html($vs_title); ?></h2>
+						<?php if ($vs_text): ?>
+							<p class="pdf-section-heading__text"><?php echo esc_html($vs_text); ?></p>
+						<?php endif; ?>
+					</header>
+
+					<a class="pdf-video__frame"
+						href="<?php echo $vs_video_url ? esc_url($vs_video_url) : '#'; ?>"
+						aria-label="Play video">
+						<?php if ($vs_thumbnail): ?>
+							<img src="<?php echo esc_url($vs_thumbnail); ?>" alt="<?php echo esc_html($vs_title); ?>">
+						<?php endif; ?>
+						<span class="pdf-video__overlay" aria-hidden="true"></span>
+						<span class="pdf-video__play" aria-hidden="true"></span>
+					</a>
+				</div>
+			</section>
+
+		<?php elseif (get_row_layout() == 'resources_section_module'): ?>
+			<?php
+			$rs_title      = get_sub_field('rs_section_title') ?: 'Resources';
+			$rs_view_all   = get_sub_field('rs_view_all_link');
+			$rs_resources  = get_sub_field('rs_resources');
+			?>
+			<section class="pdf-resources" aria-labelledby="pdf-resources-title-<?php echo $i; ?>">
+				<div class="pdf-resources__inner">
+					<header class="pdf-section-heading pdf-section-heading--center">
+						<h2 id="pdf-resources-title-<?php echo $i; ?>" class="pdf-section-heading__title"><?php echo esc_html($rs_title); ?></h2>
+					</header>
+
+					<?php if ($rs_resources): ?>
+						<div class="pdf-resource-grid">
+							<?php foreach ($rs_resources as $resource): ?>
+								<article class="pdf-resource-card">
+									<a class="pdf-resource-card__image" href="<?php echo esc_url($resource['url']); ?>">
+										<img src="<?php echo esc_url($resource['image']); ?>" alt="<?php echo esc_attr($resource['title']); ?>">
+									</a>
+									<div class="pdf-resource-card__body">
+										<h3 class="pdf-resource-card__title">
+											<a href="<?php echo esc_url($resource['url']); ?>"><?php echo esc_html($resource['title']); ?></a>
+										</h3>
+										<?php if ($resource['excerpt']): ?>
+											<p class="pdf-resource-card__excerpt"><?php echo esc_html($resource['excerpt']); ?></p>
+										<?php endif; ?>
+										<a class="pdf-text-link" href="<?php echo esc_url($resource['url']); ?>">Read More</a>
+									</div>
+								</article>
+							<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
+
+					<?php if ($rs_view_all): ?>
+						<div class="pdf-resources__action">
+							<a class="pdf-button pdf-button--large"
+								href="<?php echo esc_url($rs_view_all['url']); ?>"
+								target="<?php echo esc_attr($rs_view_all['target'] ?: '_self'); ?>">
+								<?php echo esc_html($rs_view_all['title']); ?>
+							</a>
+						</div>
+					<?php endif; ?>
+				</div>
+			</section>
+
+		<?php elseif (get_row_layout() == 'news_events_module'): ?>
+			<?php
+			$ne_title       = get_sub_field('ne_section_title') ?: 'News & Events';
+			$ne_text        = get_sub_field('ne_section_text');
+			$ne_see_all     = get_sub_field('ne_see_all_link');
+			$ne_updates     = get_sub_field('ne_updates');
+			?>
+			<section class="pdf-news" aria-labelledby="pdf-news-title-<?php echo $i; ?>">
+				<div class="pdf-news__inner">
+					<div class="pdf-news__intro">
+						<div class="pdf-section-heading">
+							<h2 id="pdf-news-title-<?php echo $i; ?>" class="pdf-section-heading__title"><?php echo esc_html($ne_title); ?></h2>
+							<?php if ($ne_text): ?>
+								<p class="pdf-section-heading__text pdf-section-heading__text--strong"><?php echo esc_html($ne_text); ?></p>
+							<?php endif; ?>
+						</div>
+						<?php if ($ne_see_all): ?>
+							<a class="pdf-button"
+								href="<?php echo esc_url($ne_see_all['url']); ?>"
+								target="<?php echo esc_attr($ne_see_all['target'] ?: '_self'); ?>">
+								<?php echo esc_html($ne_see_all['title']); ?>
+							</a>
+						<?php endif; ?>
+					</div>
+
+					<?php if ($ne_updates): ?>
+						<div class="pdf-news-carousel" data-pdf-carousel>
+							<div class="pdf-news-carousel__track">
+								<?php foreach ($ne_updates as $update): ?>
+									<a class="pdf-news-card"
+										href="<?php echo esc_url($update['url']); ?>"
+										style="--news-image: url('<?php echo esc_url($update['image']); ?>');">
+										<div class="pdf-news-card__content">
+											<h3 class="pdf-news-card__title"><?php echo esc_html($update['title']); ?></h3>
+											<?php if ($update['description']): ?>
+												<p class="pdf-news-card__description"><?php echo esc_html($update['description']); ?></p>
+											<?php endif; ?>
+										</div>
+									</a>
+								<?php endforeach; ?>
+							</div>
+
+							<div class="pdf-news-carousel__controls" aria-label="News carousel controls">
+								<button class="pdf-slider-button" type="button" data-pdf-carousel-next aria-label="Next update"></button>
+								<button class="pdf-slider-button pdf-slider-button--prev" type="button" data-pdf-carousel-prev aria-label="Previous update"></button>
+							</div>
+						</div>
+					<?php endif; ?>
+				</div>
+			</section>
+
+		<?php elseif (get_row_layout() == 'content_single_image_text_module'): ?>
+			<?php
+			$csit_icon_img = get_sub_field('csit_icon_img');
+			$csit_title    = get_sub_field('csit_title') ?: 'Join Our Team';
+			$csit_subtitle = get_sub_field('csit_subtitle');
+			$csit_desc     = get_sub_field('csit_description');
+			$csit_button   = get_sub_field('csit_button');
+			?>
+			<section class="pdf-single-image-text" aria-labelledby="pdf-single-image-text-title-<?php echo $i; ?>">
+				<div class="pdf-single-image-text__inner">
+					<div class="pdf-single-image-text__icon" aria-hidden="true">
+						<?php if ($csit_icon_img): ?>
+							<img src="<?php echo esc_url($csit_icon_img); ?>" alt="<?php echo esc_attr($csit_title); ?>" style="width: 60px; height: 60px; object-fit: contain;">
+						<?php endif; ?>
+					</div>
+
+					<h2 id="pdf-single-image-text-title-<?php echo $i; ?>" class="pdf-single-image-text__title"><?php echo esc_html($csit_title); ?></h2>
+
+					<?php if ($csit_subtitle): ?>
+						<p class="pdf-single-image-text__subtitle"><?php echo esc_html($csit_subtitle); ?></p>
+					<?php endif; ?>
+
+					<?php if ($csit_desc): ?>
+						<div class="pdf-single-image-text__description">
+							<?php echo $csit_desc; ?>
+						</div>
+					<?php endif; ?>
+
+					<?php if ($csit_button): ?>
+						<a class="pdf-single-image-text__button"
+							href="<?php echo esc_url($csit_button['url']); ?>"
+							target="<?php echo esc_attr($csit_button['target'] ?: '_self'); ?>">
+							<?php echo esc_html($csit_button['title']); ?>
+						</a>
+					<?php endif; ?>
+				</div>
+			</section>
+
+		<?php elseif (get_row_layout() == 'full_width_cta_fig_module'): ?>
+			<?php
+			$fwcf_show    = get_sub_field('fwcf_show');
+			$fwcf_para    = get_sub_field('fwcf_para_img');
+			$fwcf_bg      = get_sub_field('fwcf_bg');
+			$fwcf_heading = get_sub_field('fwcf_heading');
+			$fwcf_desc    = get_sub_field('fwcf_description');
+			$fwcf_cta1    = get_sub_field('fwcf_cta1');
+			$fwcf_cta2    = get_sub_field('fwcf_cta2');
+			?>
+			<?php if ($fwcf_show): ?>
+				<section class="fullwidth-cta1<?php echo $fwcf_para ? ' fixed-bg' : ''; ?>"
+					id="fullwidth-cta1-<?php echo $i; ?>"
+					<?php if ($fwcf_bg): ?>style="background-image: url(<?php echo esc_url($fwcf_bg); ?>);" <?php endif; ?>>
+					<div class="container">
+						<?php if ($fwcf_heading): ?>
+							<h2 class="fwc-heading"><?php echo esc_html($fwcf_heading); ?></h2>
+						<?php endif; ?>
+
+						<?php if ($fwcf_desc): ?>
+							<div class="fwc-description"><?php echo $fwcf_desc; ?></div>
+						<?php endif; ?>
+
+						<?php if ($fwcf_cta1): ?>
+							<a class="button btn btn-primary btn-lg fwc-cta1"
+								href="<?php echo esc_url($fwcf_cta1['url']); ?>"
+								target="<?php echo esc_attr($fwcf_cta1['target'] ?: '_self'); ?>">
+								<?php echo esc_html($fwcf_cta1['title']); ?>
+							</a>
+						<?php endif; ?>
+
+						<?php if ($fwcf_cta2): ?>
+							<a class="button btn btn-outline-light btn-lg fwc-cta2"
+								href="<?php echo esc_url($fwcf_cta2['url']); ?>"
+								target="<?php echo esc_attr($fwcf_cta2['target'] ?: '_self'); ?>">
+								<?php echo esc_html($fwcf_cta2['title']); ?>
+							</a>
+						<?php endif; ?>
+					</div>
+				</section>
 			<?php endif; ?>
 		<?php endif; ?>
+
+
 	<?php endwhile; ?>
-	
+
 	<?php
 	echo '</section>'; ?>
 <?php endif; ?>

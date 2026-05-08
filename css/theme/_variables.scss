@@ -7,7 +7,7 @@
 
 
 //Container Width
-$container-width : rem(1158);
+$container-width : rem(1180);
 
 // Colors
 $primary: #13568b;
@@ -33,6 +33,53 @@ $orange: #d95000;
 $green: #62A139;
 $medium-green: #6CB33F;
 $off-black: #1C1C1C;
+
+// PDF Modular Website Design Tokens
+$pdf-container-width: rem(1180);
+$pdf-gutter: rem(20);
+$pdf-section-padding-y: rem(100);
+$pdf-section-padding-y-md: rem(72);
+$pdf-section-padding-y-sm: rem(56);
+$pdf-radius-sm: rem(3);
+
+$pdf-color-primary: #A91C23;
+$pdf-color-primary-dark: #731219;
+$pdf-color-surface: $white;
+$pdf-color-surface-muted: #F5F7F8;
+$pdf-color-surface-cool: #E6E9EC;
+$pdf-color-surface-blue-gray: #C1CAD1;
+$pdf-color-footer-bottom: #191919;
+$pdf-color-footer-muted: #9EA4A9;
+$pdf-color-cert-blue: #1F5F8F;
+$pdf-color-cert-gold: #E0A51B;
+$pdf-color-text: $black;
+$pdf-color-text-muted: #444;
+$pdf-color-on-dark: $white;
+
+$pdf-font-family: 'Open Sans', sans-serif;
+$pdf-heading-size: rem(36);
+$pdf-heading-line-height: rem(48);
+$pdf-heading-size-sm: rem(30);
+$pdf-heading-line-height-sm: rem(38);
+$pdf-heading-weight: 600;
+$pdf-body-size: rem(16);
+$pdf-body-line-height: rem(24);
+$pdf-body-weight: 400;
+$pdf-body-bold-weight: 700;
+$pdf-card-title-size: rem(24);
+$pdf-card-title-line-height: rem(32);
+$pdf-card-title-weight: 600;
+$pdf-link-size: rem(18);
+$pdf-link-line-height: rem(24);
+$pdf-link-weight: 600;
+$pdf-button-size: rem(16);
+$pdf-button-line-height: rem(24);
+$pdf-button-size-lg: rem(21);
+$pdf-button-line-height-lg: rem(28);
+$pdf-footer-size: rem(15);
+$pdf-footer-line-height: rem(24);
+$pdf-footer-bottom-size: rem(14);
+$pdf-footer-bottom-line-height: rem(20);
 //Body Variables
 $body-bg : $white;
 $body-color: $dark-grey;

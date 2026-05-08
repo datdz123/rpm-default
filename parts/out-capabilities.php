@@ -1,39 +1,54 @@
-<div style="width: 1440px; background: white; overflow: hidden; justify-content: flex-start; align-items: flex-start; display: inline-flex">
-  <img style="flex: 1 1 0; align-self: stretch" src="https://placehold.co/720x636" />
-  <div style="flex: 1 1 0; align-self: stretch; padding-left: 60px; padding-right: 60px; padding-top: 100px; padding-bottom: 100px; background: #731219; overflow: hidden; flex-direction: column; justify-content: center; align-items: flex-start; gap: 32px; display: inline-flex">
-    <div style="align-self: stretch; justify-content: space-between; align-items: center; display: inline-flex">
-      <div style="justify-content: center; display: flex; flex-direction: column; color: white; font-size: 36px; font-family: Open Sans; font-weight: 600; line-height: 48px; word-wrap: break-word">Our Capabilities</div>
-      <div data-property-1="MB-Primary-Hover" style="justify-content: flex-start; align-items: flex-start; display: flex"></div>
-    </div>
-    <div style="align-self: stretch; height: 0px; outline: 1px white solid; outline-offset: -0.50px"></div>
-    <div data-property-1="3 Value Props" style="align-self: stretch; flex-direction: column; justify-content: center; align-items: flex-start; gap: 36px; display: flex">
-      <div data-property-1="1 Value Prop" style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 36px; display: inline-flex">
-        <div style="padding-top: 2px; padding-bottom: 2px; flex-direction: column; justify-content: center; align-items: flex-start; gap: 10px; display: inline-flex">
-          <div style="width: 71.37px; height: 67.77px; background: white"></div>
-        </div>
-        <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
-          <div style="justify-content: center; display: flex; flex-direction: column; color: white; font-size: 24px; font-family: Open Sans; font-weight: 600; line-height: 32px; word-wrap: break-word">Engineering</div>
-          <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: white; font-size: 18px; font-family: Open Sans; font-weight: 400; line-height: 24px; word-wrap: break-word">Expert guidance on mechanical and electrical engineering problems, including troubleshooting.</div>
-        </div>
-      </div>
-      <div data-property-1="1 Value Prop" style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 36px; display: inline-flex">
-        <div style="padding-top: 2px; padding-bottom: 2px; flex-direction: column; justify-content: center; align-items: flex-start; gap: 10px; display: inline-flex">
-          <div style="width: 71.37px; height: 67.77px; background: white"></div>
-        </div>
-        <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
-          <div style="justify-content: center; display: flex; flex-direction: column; color: white; font-size: 24px; font-family: Open Sans; font-weight: 600; line-height: 32px; word-wrap: break-word">Specialty Services</div>
-          <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: white; font-size: 18px; font-family: Open Sans; font-weight: 400; line-height: 24px; word-wrap: break-word">Prototyping, CAD/CAM design assistance, product design consultation</div>
-        </div>
-      </div>
-      <div data-property-1="1 Value Prop" style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 36px; display: inline-flex">
-        <div style="padding-top: 2px; padding-bottom: 2px; flex-direction: column; justify-content: center; align-items: flex-start; gap: 10px; display: inline-flex">
-          <div style="width: 71.37px; height: 67.77px; background: white"></div>
-        </div>
-        <div style="flex: 1 1 0; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 4px; display: inline-flex">
-          <div style="justify-content: center; display: flex; flex-direction: column; color: white; font-size: 24px; font-family: Open Sans; font-weight: 600; line-height: 32px; word-wrap: break-word">Quality Assurance</div>
-          <div style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: white; font-size: 18px; font-family: Open Sans; font-weight: 400; line-height: 24px; word-wrap: break-word">ISO 9001-2015 Certified, Duns – 82-487-3954, NAICS – 332999</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<?php
+/**
+ * Content Icon List - Content i2 - Desktop.
+ */
+
+defined('ABSPATH') || exit;
+
+$capabilities = array(
+	array(
+		'icon'        => 'fa-cogs',
+		'title'       => 'Engineering',
+		'description' => 'Expert guidance on mechanical and electrical engineering problems, including troubleshooting.',
+	),
+	array(
+		'icon'        => 'fa-wrench',
+		'title'       => 'Specialty Services',
+		'description' => 'Prototyping, CAD/CAM design assistance, and product design consultation.',
+	),
+	array(
+		'icon'        => 'fa-check-circle',
+		'title'       => 'Quality Assurance',
+		'description' => 'ISO 9001-2015 Certified, Duns - 82-487-3954, NAICS - 332999.',
+	),
+);
+?>
+
+<section class="pdf-capabilities" aria-labelledby="pdf-capabilities-title">
+	<div class="pdf-capabilities__media">
+		<img src="https://placehold.co/720x636" alt="PDF fabrication and process development equipment">
+	</div>
+
+	<div class="pdf-capabilities__content">
+		<div class="pdf-section-heading pdf-section-heading--light pdf-section-heading--split">
+			<h2 id="pdf-capabilities-title" class="pdf-section-heading__title">Our Capabilities</h2>
+			<a class="pdf-button pdf-button--light" href="<?php echo esc_url(home_url('/capabilities/')); ?>">View All</a>
+		</div>
+
+		<div class="pdf-capabilities__rule" aria-hidden="true"></div>
+
+		<div class="pdf-capabilities__list">
+			<?php foreach ($capabilities as $capability) : ?>
+				<article class="pdf-capability-item">
+					<div class="pdf-capability-item__icon" aria-hidden="true">
+						<i class="fa <?php echo esc_attr($capability['icon']); ?>"></i>
+					</div>
+					<div class="pdf-capability-item__body">
+						<h3 class="pdf-capability-item__title"><?php echo esc_html($capability['title']); ?></h3>
+						<p class="pdf-capability-item__description"><?php echo esc_html($capability['description']); ?></p>
+					</div>
+				</article>
+			<?php endforeach; ?>
+		</div>
+	</div>
+</section>

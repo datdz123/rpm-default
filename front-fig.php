@@ -1,15 +1,14 @@
-
 <?php
 /*
-	Template Name: Front Page
+	Template Name: Front Page 2 
 */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 get_header();
 
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod('understrap_container_type');
 
 ?>
 
@@ -17,15 +16,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	<main class="site-main" id="main">
 
-		<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+		<div class="<?php echo esc_attr($container); ?>" id="content" tabindex="-1">
 
 			<div class="row">
-            <?php while ( have_posts() ) : the_post(); ?>
+				<?php while (have_posts()) : the_post(); ?>
 
-					<?php get_template_part( 'loop-templates/content', 'empty' ); ?>
+					<?php get_template_part('loop-templates/content', 'empty'); ?>
 
 
-				<?php endwhile; // end of the loop. ?>
+				<?php endwhile; // end of the loop. 
+				?>
 
 			</div><!-- .row -->
 
@@ -33,14 +33,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<!-- Do the Flexible Content check -->
 		<?php get_template_part('parts/shared/flexible-content'); ?>
-		<?php get_template_part('parts/content-tabs-module'); ?>
-        <?php get_template_part('parts/industries-we-serve'); ?>
-        <?php get_template_part('parts/out-capabilities'); ?>
-        <?php get_template_part('parts/about-us'); ?>
-        <?php get_template_part('parts/video-section'); ?>
-        <?php get_template_part('parts/resources-section'); ?>     
-        <?php get_template_part('parts/news-events'); ?>
- 
+		
+    
 
 
 	</main><!-- #main -->

@@ -1564,5 +1564,37 @@ var tabs = document.querySelectorAll('.ctm-tab');
 			}
 		});
 	});
+  
+
+  // ── pdf-industries: Industry Card Grid Toggle (industries-we-serve.php) ──
+  (function () {
+    var grid = document.querySelector('[data-industries-grid]');
+    if (!grid) { return; }
+    grid.addEventListener('click', function (event) {
+      var card = event.target.closest('.pdf-industry-card');
+      if (!card || !grid.contains(card)) { return; }
+      grid.querySelectorAll('.pdf-industry-card.is-active').forEach(function (activeCard) {
+        if (activeCard !== card) { activeCard.classList.remove('is-active'); }
+      });
+      card.classList.toggle('is-active');
+    });
+  }());
+
+  // ── pdf-news-carousel: News & Events Carousel Scroll (news-events.php) ──
+  (function () {
+    var carousel = document.querySelector('[data-pdf-carousel]');
+    if (!carousel) { return; }
+    var track = carousel.querySelector('.pdf-news-carousel__track');
+    var next  = carousel.querySelector('[data-pdf-carousel-next]');
+    var prev  = carousel.querySelector('[data-pdf-carousel-prev]');
+    function scrollByCard(direction) {
+      var card     = track.querySelector('.pdf-news-card');
+      var gap      = 20;
+      var distance = card ? card.offsetWidth + gap : 300;
+      track.scrollBy({ left: direction * distance, behavior: 'smooth' });
+    }
+    next.addEventListener('click', function () { scrollByCard(1); });
+    prev.addEventListener('click', function () { scrollByCard(-1); });
+  }());
 
 }(jQuery));
