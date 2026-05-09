@@ -21373,6 +21373,59 @@ body .gform_legacy_markup_wrapper ul.gfield_radio li {
   }
 }
 
+.header6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+}
+.header6 .top-line {
+  background-color: #191919;
+  border-bottom: 2px solid #0072bb;
+}
+.header6 .top-line .sh-email a, .header6 .top-line .sh-ph a {
+  color: #fff;
+}
+.header6 .iso-text {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+.header6 .header-inner {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+.header6 .search-form-tigger {
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .header6 .search-form-tigger {
+    color: #fff;
+  }
+  .header6 .search-form-tigger:hover, .header6 .search-form-tigger:focus {
+    color: #fff;
+    opacity: 0.8;
+  }
+}
+.header6 .btn-alt2 {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.header6 .btn-alt2:hover, .header6 .btn-alt2:focus {
+  background-color: #fff;
+  color: #000;
+}
+.header6 .btn-primary {
+  background-color: #A91C23;
+  border-color: #A91C23;
+  color: #fff;
+}
+.header6 .btn-primary:hover, .header6 .btn-primary:focus {
+  background-color: #731219;
+  border-color: #731219;
+}
 @media (min-width: 768px) {
   .header6 .header-inner .container {
     -ms-flex-wrap: nowrap;

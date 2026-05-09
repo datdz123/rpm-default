@@ -29,7 +29,7 @@
 			                endwhile; ?>
 			            <?php
 			            endif;  ?>
-			        </div>
+					</div>
 				</div>
 				<div class="header-topline-menu col-lg-5 navbar-expand-lg navbar-dark d-none d-lg-block">
 					<?php wp_nav_menu(
@@ -66,7 +66,7 @@
 	
 	<div class="header-inner sh-sticky-wrap">
 
-		<nav class="navbar navbar-expand-lg navbar-light">
+		<nav class="navbar navbar-expand-lg navbar-dark">
 			<div class="container">
 
 				<?php if ( 'container' == $container ) : ?>
