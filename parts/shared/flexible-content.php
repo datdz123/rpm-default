@@ -537,122 +537,43 @@
 			</section>
 
 		<?php elseif (get_row_layout() == 'carousel_with_content'): ?>
-			<section class="carousel-with-content" id="carousel_with_content<?php echo $i ?>">
-				<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+			<section class="carousel-with-content hero-cwc" id="carousel_with_content<?php echo $i ?>" <?php if (get_sub_field('cwc_bg')): ?>style="background-image: url(<?php echo get_sub_field('cwc_bg') ?>);" <?php endif; ?>>
+				<div class="cwc-container w-100 position-relative" style="z-index: 1;">
+					<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : 'py-5' ?>">
+						<div class="row">
+							<div class="carousel-content col-md-10 mx-auto text-center">
+								<?php if (get_sub_field('cwc_title')): ?>
+									<h1 class="cwc-title text-white mb-4"><?php echo get_sub_field('cwc_title'); ?></h1>
+								<?php endif ?>
 
-					<!-- With Static Content -->
-					<?php if (get_sub_field('show_static_content')): ?>
-						<div class="cwc-static-wrapper">
-							<div class="cwc-container">
-								<div class="container">
-									<div class="row">
-										<div class="carousel-content col-md-8 <?php echo $animation; ?>">
-											<?php if (get_sub_field('cwc_title')): ?>
-												<h1 class="cwc-title"><?php echo get_sub_field('cwc_title'); ?></h1>
-											<?php endif ?>
+								<?php if (get_sub_field('cwc_description')): ?>
+									<p class="cwc-description text-white mb-5 mx-auto" style="font-size: 1.1rem; line-height: 1.6; opacity: 0.9; max-width: 800px;"><?php echo get_sub_field('cwc_description'); ?></p>
+								<?php endif ?>
 
-											<?php if (get_sub_field('cwc_description')): ?>
-												<p class="cwc-description"><?php echo get_sub_field('cwc_description'); ?></p>
-											<?php endif ?>
+								<div class="cwc-actions d-flex flex-wrap justify-content-center align-items-center">
+									<?php
+									$link = get_sub_field('cwc_cta1');
+									if ($link):
+										$link_url = $link['url'];
+										$link_title = $link['title'];
+										$link_target = $link['target'] ? $link['target'] : '_self';
+									?>
+										<a class="button btn btn-primary btn-lg cwc-cta1" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
+									<?php endif; ?>
 
-											<?php
-											$link = get_sub_field('cwc_cta1');
-											if ($link):
-												$link_url = $link['url'];
-												$link_title = $link['title'];
-												$link_target = $link['target'] ? $link['target'] : '_self';
-											?>
-												<a class="button btn  btn-primary btn-lg cwc-cta1" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-											<?php endif; ?>
-
-											<?php
-											$link = get_sub_field('cwc_cta2');
-											if ($link):
-												$link_url = $link['url'];
-												$link_title = $link['title'];
-												$link_target = $link['target'] ? $link['target'] : '_self';
-											?>
-												<a class="button btn btn-primary btn-lg cwc-cta2" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-											<?php endif; ?>
-										</div>
-									</div>
+									<?php
+									$link = get_sub_field('cwc_cta2');
+									if ($link):
+										$link_url = $link['url'];
+										$link_title = $link['title'];
+										$link_target = $link['target'] ? $link['target'] : '_self';
+									?>
+										<a class="button btn btn-outline-light btn-lg cwc-cta2" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
+									<?php endif; ?>
 								</div>
 							</div>
-							<?php if (have_rows('cwc_carousel')): ?>
-								<div class="carousel-inner cwc-carousel">
-									<?php while (have_rows('cwc_carousel')) : the_row(); ?>
-										<div class="carousel-item <?php if (get_row_index() == 1): ?>active<?php endif ?>" <?php if (get_sub_field('cwc_bg')): ?>style="background-image: url(<?php echo get_sub_field('cwc_bg') ?>);" <?php endif; ?>>
-										</div>
-									<?php endwhile; ?>
-								</div>
-							<?php endif; ?>
 						</div>
-					<?php endif ?>
-					<!-- With Static Content -->
-
-					<div class="wrap <?php if (get_sub_field('show_static_content')): ?> d-none <?php endif; ?>">
-						<?php if (have_rows('cwc_carousel')): ?>
-							<div class="carousel-inner cwc-carousel">
-								<?php while (have_rows('cwc_carousel')) : the_row(); ?>
-									<div class="carousel-item <?php if (get_row_index() == 1): ?>active<?php endif ?>" <?php if (get_sub_field('cwc_bg')): ?>style="background-image: url(<?php echo get_sub_field('cwc_bg') ?>);" <?php endif; ?>>
-
-										<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : 'py-5' ?>">
-											<div class="row">
-												<?php $animation = get_sub_field('animation_style') != 'none' ? get_sub_field('animation_style') . ' animated' : ''; ?>
-												<div class="carousel-content col-md-8 <?php echo $animation; ?>">
-													<?php if (get_sub_field('cwc_title')): ?>
-														<h2 class="cwc-title"><?php echo get_sub_field('cwc_title'); ?></h2>
-													<?php endif ?>
-
-													<?php if (get_sub_field('cwc_description')): ?>
-														<p class="cwc-description"><?php echo get_sub_field('cwc_description'); ?></p>
-													<?php endif ?>
-
-													<?php
-													$link = get_sub_field('cwc_cta1');
-													if ($link):
-														$link_url = $link['url'];
-														$link_title = $link['title'];
-														$link_target = $link['target'] ? $link['target'] : '_self';
-													?>
-														<a class="button btn  btn-primary btn-lg cwc-cta1" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-													<?php endif; ?>
-
-													<?php
-													$link = get_sub_field('cwc_cta2');
-													if ($link):
-														$link_url = $link['url'];
-														$link_title = $link['title'];
-														$link_target = $link['target'] ? $link['target'] : '_self';
-													?>
-														<a class="button btn btn-outline-light btn-lg cwc-cta2" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-													<?php endif; ?>
-												</div>
-											</div>
-										</div>
-									</div>
-								<?php endwhile; ?>
-							</div>
-						<?php endif; ?>
 					</div>
-
-					<?php if (have_rows('cwc_carousel')): ?>
-						<ol class="carousel-indicators">
-							<?php while (have_rows('cwc_carousel')) : the_row(); ?>
-								<li tabindex="0" data-target="#carouselExampleIndicators2" data-slide-to="<?php echo get_row_index() - 1 ?>" <?php if (get_row_index() == 1): ?>class="active" <?php endif ?>></li>
-							<?php endwhile; ?>
-						</ol>
-					<?php endif; ?>
-
-					<!--<a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-				</a>-->
-
 				</div>
 			</section>
 

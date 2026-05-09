@@ -495,6 +495,66 @@
 }
 
 .header6 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1030;
+
+	.top-line {
+		background-color: $pdf-color-footer-bottom;
+		border-bottom: 2px solid $secondary;
+		
+		.sh-email, .sh-ph {
+			a {
+				color: $white;
+			}
+		}
+	}
+
+	.iso-text {
+		color: $white;
+		font-weight: 700;
+		font-size: rem(14);
+	}
+
+	.header-inner {
+		background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+	}
+
+	.search-form-tigger {
+		color: $white;
+		@include media-breakpoint-up(md) {
+			color: $white;
+			&:hover, &:focus {
+				color: $white;
+				opacity: 0.8;
+			}
+		}
+	}
+
+	.btn-alt2 {
+		background-color: transparent;
+		color: $white;
+		border: 1px solid $white;
+		
+		&:hover, &:focus {
+			background-color: $white;
+			color: $black;
+		}
+	}
+
+	.btn-primary {
+		background-color: $pdf-color-primary;
+		border-color: $pdf-color-primary;
+		color: $white;
+
+		&:hover, &:focus {
+			background-color: $pdf-color-primary-dark;
+			border-color: $pdf-color-primary-dark;
+		}
+	}
+
 	@include media-breakpoint-up(md) {
 		.header-inner {
 			.container {
