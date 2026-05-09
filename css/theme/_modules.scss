@@ -728,7 +728,6 @@ iframe {
     	position: absolute;
     	left: 0;
     	top: 0;
-    	background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75));
     }
 }
 
@@ -756,9 +755,7 @@ iframe {
 	.carousel-content {
 		text-align: left;
 	}
-	.carousel-item:before {
-		background: rgba(40,98,132,0.85);
-	}
+	
 	.carousel-content-image {
 		padding: 2em;
 		@include media-breakpoint-up(md) {
@@ -768,16 +765,58 @@ iframe {
 }
 
 
-.cwc-static-wrapper{
-	position: relative;
-	text-align: center;
-	.cwc-container{
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
+.hero-cwc {
+	min-height: rem(550);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+
+	&:before {
+		content: '';
 		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
 		left: 0;
-		z-index: 1;
+		top: 0;
+		background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65));
+	}
+
+	.cwc-title {
+		font-size: rem(42);
+		font-weight: 700;
+		@include media-breakpoint-up(md) {
+			font-size: rem(52);
+		}
+	}
+
+	.cwc-actions {
+		gap: 1rem;
+		.btn {
+			padding: 0.75rem 2rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+		}
+		.btn-primary {
+			background-color: $pdf-color-primary;
+			border-color: $pdf-color-primary;
+			&:hover {
+				background-color: $pdf-color-primary-dark;
+				border-color: $pdf-color-primary-dark;
+			}
+		}
+		.btn-outline-light {
+			border: 2px solid $white;
+			color: $white;
+			background: transparent;
+			&:hover {
+				background: $white;
+				color: $black;
+			}
+		}
 	}
 }
 

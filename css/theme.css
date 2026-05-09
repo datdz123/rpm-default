@@ -22915,8 +22915,6 @@ iframe {
   position: absolute;
   left: 0;
   top: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.75)), to(rgba(0, 0, 0, 0.75)));
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
 }
 
 .carousel-content {
@@ -22941,9 +22939,6 @@ iframe {
 .carousel-with-content-hero-one .carousel-content {
   text-align: left;
 }
-.carousel-with-content-hero-one .carousel-item:before {
-  background: rgba(40, 98, 132, 0.85);
-}
 .carousel-with-content-hero-one .carousel-content-image {
   padding: 2em;
 }
@@ -22953,19 +22948,63 @@ iframe {
   }
 }
 
-.cwc-static-wrapper {
-  position: relative;
-  text-align: center;
+.hero-cwc {
+  min-height: 34.375rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.cwc-static-wrapper .cwc-container {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+.hero-cwc:before {
+  content: "";
   width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
   left: 0;
-  z-index: 1;
+  top: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.65)), to(rgba(0, 0, 0, 0.65)));
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+}
+.hero-cwc .cwc-title {
+  font-size: 2.625rem;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .hero-cwc .cwc-title {
+    font-size: 3.25rem;
+  }
+}
+.hero-cwc .cwc-actions {
+  gap: 1rem;
+}
+.hero-cwc .cwc-actions .btn, .hero-cwc .cwc-actions .product-grid-item-link {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.hero-cwc .cwc-actions .btn-primary {
+  background-color: #A91C23;
+  border-color: #A91C23;
+}
+.hero-cwc .cwc-actions .btn-primary:hover {
+  background-color: #731219;
+  border-color: #731219;
+}
+.hero-cwc .cwc-actions .btn-outline-light {
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+.hero-cwc .cwc-actions .btn-outline-light:hover {
+  background: #fff;
+  color: #000;
 }
 
 /*===================== Hero Video Banner Module =================*/

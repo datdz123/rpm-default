@@ -1758,27 +1758,6 @@
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_66472628fa789",
-                            "label": "Show Static Content",
-                            "name": "show_static_content",
-                            "aria-label": "",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "relevanssi_exclude": 0,
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
                             "key": "field_66472644fa78a",
                             "label": "Title",
                             "name": "cwc_title",
@@ -1786,15 +1765,7 @@
                             "type": "text",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_66472628fa789",
-                                        "operator": "==",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
+                            "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -1815,15 +1786,7 @@
                             "type": "textarea",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_66472628fa789",
-                                        "operator": "==",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
+                            "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -1844,15 +1807,7 @@
                             "type": "link",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_66472628fa789",
-                                        "operator": "==",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
+                            "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -1869,15 +1824,7 @@
                             "type": "link",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_66472628fa789",
-                                        "operator": "==",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
+                            "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -1887,11 +1834,11 @@
                             "return_format": "array"
                         },
                         {
-                            "key": "field_5fd9d50ab319e",
-                            "label": "Items",
-                            "name": "cwc_carousel",
+                            "key": "field_5fd9d57bb31a3",
+                            "label": "Background Image",
+                            "name": "cwc_bg",
                             "aria-label": "",
-                            "type": "repeater",
+                            "type": "image",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1900,198 +1847,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "collapsed": "",
-                            "min": 0,
-                            "max": 0,
-                            "layout": "table",
-                            "button_label": "Add Row",
-                            "sub_fields": [
-                                {
-                                    "key": "field_5fd9d51fb319f",
-                                    "label": "Title",
-                                    "name": "cwc_title",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_66472628fa789",
-                                                "operator": "!=",
-                                                "value": "1"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "relevanssi_exclude": 0,
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "parent_repeater": "field_5fd9d50ab319e"
-                                },
-                                {
-                                    "key": "field_5fd9d54eb31a0",
-                                    "label": "Description",
-                                    "name": "cwc_description",
-                                    "aria-label": "",
-                                    "type": "textarea",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_66472628fa789",
-                                                "operator": "!=",
-                                                "value": "1"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "relevanssi_exclude": 0,
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "rows": 3,
-                                    "placeholder": "",
-                                    "new_lines": "",
-                                    "parent_repeater": "field_5fd9d50ab319e"
-                                },
-                                {
-                                    "key": "field_5fd9d55cb31a1",
-                                    "label": "CTA 1",
-                                    "name": "cwc_cta1",
-                                    "aria-label": "",
-                                    "type": "link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_66472628fa789",
-                                                "operator": "!=",
-                                                "value": "1"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "relevanssi_exclude": 0,
-                                    "return_format": "array",
-                                    "parent_repeater": "field_5fd9d50ab319e"
-                                },
-                                {
-                                    "key": "field_5fd9d56db31a2",
-                                    "label": "CTA 2",
-                                    "name": "cwc_cta2",
-                                    "aria-label": "",
-                                    "type": "link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_66472628fa789",
-                                                "operator": "!=",
-                                                "value": "1"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "relevanssi_exclude": 0,
-                                    "return_format": "array",
-                                    "parent_repeater": "field_5fd9d50ab319e"
-                                },
-                                {
-                                    "key": "field_5fd9d57bb31a3",
-                                    "label": "Background Image",
-                                    "name": "cwc_bg",
-                                    "aria-label": "",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "url",
-                                    "preview_size": "thumbnail",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": "",
-                                    "parent_repeater": "field_5fd9d50ab319e"
-                                },
-                                {
-                                    "key": "field_5fe1cf4f53780",
-                                    "label": "Animation Style",
-                                    "name": "animation_style",
-                                    "aria-label": "",
-                                    "type": "select",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_66472628fa789",
-                                                "operator": "!=",
-                                                "value": "1"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "relevanssi_exclude": 0,
-                                    "choices": {
-                                        "none": "None",
-                                        "fadeInDown": "Fade In Down",
-                                        "fadeInUp": "Fade In Up",
-                                        "fadeInLeft": "Fade In Left",
-                                        "fadeInRight": "Fade In Right",
-                                        "zoomIn": "Zoom In",
-                                        "zoomInDown": "Zomm In Down",
-                                        "zoomInLeft": "Zoom In Left",
-                                        "zoomInRight": "Zoom In Right",
-                                        "zoomInUp": "Zoom In Up"
-                                    },
-                                    "default_value": false,
-                                    "return_format": "value",
-                                    "multiple": 0,
-                                    "allow_null": 0,
-                                    "ui": 0,
-                                    "ajax": 0,
-                                    "placeholder": "",
-                                    "create_options": 0,
-                                    "save_options": 0,
-                                    "parent_repeater": "field_5fd9d50ab319e"
-                                }
-                            ],
-                            "rows_per_page": 20
+                            "return_format": "url",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
                         },
                         {
                             "key": "field_6447d198c7eb3",
@@ -13354,5 +13119,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1778262000
+    "modified": 1778265000
 }
