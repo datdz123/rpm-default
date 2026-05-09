@@ -692,6 +692,60 @@ iframe {
   .carousel-content {
     padding: 0 2.5rem;
   }
+
+  .hero-cwc {
+  min-height: rem(600);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .cwc-title {
+    font-size: rem(42);
+    font-weight: 700;
+    @include media-breakpoint-up(md) {
+      font-size: rem(52);
+    }
+  }
+
+  .cwc-actions {
+    gap: 1rem;
+    .btn {
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .btn-primary {
+      background-color: $pdf-color-primary;
+      border-color: $pdf-color-primary;
+      &:hover {
+        background-color: $pdf-color-primary-dark;
+        border-color: $pdf-color-primary-dark;
+      }
+    }
+    .btn-outline-light {
+      border: 2px solid $white;
+      color: $white;
+      background: transparent;
+      &:hover {
+        background: $white;
+        color: $black;
+      }
+    }
+  }
+}
 }
 
 .cwc-carousel {
@@ -751,59 +805,7 @@ iframe {
   }
 }
 
-.hero-cwc {
-  min-height: rem(550);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
 
-  &:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  .cwc-title {
-    font-size: rem(42);
-    font-weight: 700;
-    @include media-breakpoint-up(md) {
-      font-size: rem(52);
-    }
-  }
-
-  .cwc-actions {
-    gap: 1rem;
-    .btn {
-      padding: 0.75rem 2rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .btn-primary {
-      background-color: $pdf-color-primary;
-      border-color: $pdf-color-primary;
-      &:hover {
-        background-color: $pdf-color-primary-dark;
-        border-color: $pdf-color-primary-dark;
-      }
-    }
-    .btn-outline-light {
-      border: 2px solid $white;
-      color: $white;
-      background: transparent;
-      &:hover {
-        background: $white;
-        color: $black;
-      }
-    }
-  }
-}
 
 /*===================== Hero Video Banner Module =================*/
 .hero-video-banner {
@@ -11546,25 +11548,7 @@ a.top-banner-close {
 /*========================================================================
  Carousel With Content (hero-cwc)
 =========================================================================*/
-.hero-cwc {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative;
-  min-height: rem(500);
-  display: flex;
-  align-items: center;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: rem(18) auto rem(16);
-    max-width: rem(1100);
-  }
-}
 
 .pdf-single-image-text__button {
   background: $pdf-color-on-dark;
@@ -11751,20 +11735,10 @@ a.top-banner-close {
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
-  min-height: rem(500);
+  min-height: rem(800);
   display: flex;
   align-items: center;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 0;
-  }
 
   .cwc-container {
     z-index: 1;

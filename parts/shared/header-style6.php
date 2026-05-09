@@ -4,40 +4,14 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-lg-2 col-sm-6 col-xs-6 col-7">
-					<div class="social-icons">
-			            <?php
-			            if( have_rows('social_profiles', 'option') ): ?>
-			                <?php
-			                while ( have_rows('social_profiles', 'option') ) : the_row(); ?>
-			                    <?php
-			                    $sf_social_icon = get_sub_field('sp_social_icon');
-			                    $socialclass = str_replace(' ', '-', get_sub_field('sp_social_profile')); // Replaces all spaces with hyphens.
-			                    $socialclass = preg_replace('/[^A-Za-z0-9\-]/', '', $socialclass); // Removes special chars.
-			                    $socialclass = strtolower($socialclass); // Convert to lowercase
-			                    if (get_sub_field('sp_social_link')) :
-			                    ?>
-			                        <a class="<?php echo $socialclass; ?>" href="<?php echo esc_url(get_sub_field('sp_social_link')); ?>" target="_blank" rel="noreferrer noopener" aria-label="<?php echo get_sub_field('sp_social_profile'); ?>">
-			                    <?php endif ?>
-			                            <?php if ($sf_social_icon): ?>
-			                                <?php echo $sf_social_icon; ?>
-			                            <?php endif ?>
-			                    <?php if (get_sub_field('sp_social_link')) : ?>
-			                        </a>
-			                    <?php endif ?>
-			                <?php
-			                endwhile; ?>
-			            <?php
-			            endif;  ?>
-					</div>
-				</div>
+				
 				<div class="header-topline-menu col-lg-5 navbar-expand-lg navbar-dark d-none d-lg-block">
 					<?php wp_nav_menu(
 						array(
 							'container_class' => 'collapse navbar-collapse',
 							'container_id'    => '',
 							'menu'			  => 'Top Nav Menu',
-							'menu_class'      => 'navbar-nav m-auto',
+							'menu_class'      => 'navbar-nav',
 							'fallback_cb'     => '',
 							'menu_id'         => 'top-line-menu',
 							'depth'           => 0,
