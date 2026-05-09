@@ -2,10 +2,10 @@
 	<?php get_template_part( 'parts/covid-banner' ); ?>	
 	<div class="top-line">
 		<div class="container">
-			<div class="row">
+			<div class="row justify-content-between align-items-center">
 
 				
-				<div class="header-topline-menu col-lg-5 navbar-expand-lg navbar-dark d-none d-lg-block">
+				<div class="header-topline-menu col-auto navbar-expand-lg navbar-dark d-none d-lg-block">
 					<?php wp_nav_menu(
 						array(
 							'container_class' => 'collapse navbar-collapse',
@@ -19,7 +19,13 @@
 						)
 					); ?>
 				</div>
-				<div class="col-lg-5 col-sm-6 col-xs-6 col-5 text-right">
+				<div class="col-auto text-right">
+					<?php
+			        $email_address = get_field('global_email', 'option');
+			        if ($email_address): ?>
+			            <span class="sh-email"><a class="cms_email" href="mailto:<?php echo strtolower($email_address); ?>" title="Email Us" aria-label="Email Us"><span class="material-icons">mail_outline</span> <span><?php echo $email_address; ?></span></a></span>
+			        <?php endif ?>
+					
 					<?php
 			        $tel_number = get_field('global_phone_number','option');
 			        $unformatted_tel_number = preg_replace("/[^0-9]/", '', $tel_number);?>
@@ -27,11 +33,7 @@
 			              <span class="sh-ph"><a class="cms_phone" href="tel:<?php echo $unformatted_tel_number;?>" aria-label="Call Us" title="Call Us"><span class="material-icons">call</span> <span><?php echo $tel_number;?></span></a></span>
 			        <?php endif ?>
 
-			        <?php
-			        $email_address = get_field('global_email', 'option');
-			        if ($email_address): ?>
-			            <span class="sh-email"><a class="cms_email" href="mailto:<?php echo strtolower($email_address); ?>" title="Email Us" aria-label="Email Us"><span class="material-icons">mail_outline</span> <span><?php echo $email_address; ?></span></a></span>
-			        <?php endif ?>
+			        
 
 				</div>
 			</div>

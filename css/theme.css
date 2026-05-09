@@ -20970,9 +20970,12 @@ body .gform_legacy_markup_wrapper ul.gfield_radio li {
   }
 }
 
-.sh-ph,
 .sh-email {
   margin-right: 1rem;
+}
+
+.sh-ph,
+.sh-email {
   font-size: 1rem;
   color: white;
 }
@@ -21692,7 +21695,7 @@ body .gform_legacy_markup_wrapper ul.gfield_radio li {
     margin-right: 6.2%;*/
   }
   .header-topline-menu .navbar-nav > li > .nav-link {
-    padding: 0 1.25rem;
+    padding-right: 0 1.25rem;
   }
   .header-topline-menu .menu-item:not(:first-child) .nav-link {
     margin-left: 1.125rem !important;
@@ -21790,9 +21793,6 @@ body .gform_legacy_markup_wrapper ul.gfield_radio li {
 }
 .navbar-dark .m-subnav-arrow:after:hover, .navbar-dark .m-subnav-arrow:after:focus {
   color: #000;
-}
-.navbar-dark .site-nav-container {
-  background: #13568b;
 }
 
 .navbar-light .main-menu .menu-item:hover .nav-link, .navbar-light .main-menu .menu-item:focus .nav-link {
@@ -25384,16 +25384,16 @@ iframe {
   border: none;
   position: relative;
   line-height: normal;
-  background-color: #10b1d7;
+  background-color: #A91C23;
 }
 .search-btn:focus, .search-btn:hover {
-  background-color: #0072bb;
+  background-color: #A91C23;
 }
 
 .search-close {
   /*padding-top: rem(4);*/
   margin-left: 1.25rem;
-  color: #10b1d7;
+  color: #A91C23;
   font-size: 1.875rem;
 }
 .search-close i {

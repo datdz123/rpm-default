@@ -3181,17 +3181,17 @@ iframe {
   border: none;
   position: relative;
   line-height: normal;
-  background-color: $link-color;
+  background-color: $pdf-color-primary;
   &:focus,
   &:hover {
-    background-color: $link-hover-color;
+    background-color: $pdf-color-primary;
   }
 }
 
 .search-close {
   /*padding-top: rem(4);*/
   margin-left: rem(20);
-  color: $link-color;
+  color: $pdf-color-primary;
   font-size: rem(30);
   i {
     cursor: pointer;

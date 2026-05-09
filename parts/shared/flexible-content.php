@@ -537,42 +537,39 @@
 			</section>
 
 		<?php elseif (get_row_layout() == 'carousel_with_content'): ?>
-			<section class="carousel-with-content hero-cwc" id="carousel_with_content<?php echo $i ?>" <?php if (get_sub_field('cwc_bg')): ?>style="background-image: url(<?php echo get_sub_field('cwc_bg') ?>);" <?php endif; ?>>
-				<div class="cwc-container w-100 position-relative" style="z-index: 1;">
-					<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : 'py-5' ?>">
-						<div class="row">
-							<div class="carousel-content col-md-10 mx-auto text-center">
-								<?php if (get_sub_field('cwc_title')): ?>
-									<h1 class="cwc-title text-white mb-4"><?php echo get_sub_field('cwc_title'); ?></h1>
-								<?php endif ?>
+			<section class="fullwidth-cta1" id="carousel_with_content<?php echo $i ?>" <?php if (get_sub_field('cwc_bg')): ?>style="background-image: url(<?php echo get_sub_field('cwc_bg') ?>);" <?php endif; ?>>
+				<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : '' ?>">
+					
+					<?php if (get_sub_field('cwc_title')): ?>
+						<h1 class="fwc-heading"><?php echo get_sub_field('cwc_title'); ?></h1>
+					<?php endif ?>
 
-								<?php if (get_sub_field('cwc_description')): ?>
-									<p class="cwc-description text-white mb-5 mx-auto" style="font-size: 1.1rem; line-height: 1.6; opacity: 0.9; max-width: 800px;"><?php echo get_sub_field('cwc_description'); ?></p>
-								<?php endif ?>
-
-								<div class="cwc-actions d-flex flex-wrap justify-content-center align-items-center">
-									<?php
-									$link = get_sub_field('cwc_cta1');
-									if ($link):
-										$link_url = $link['url'];
-										$link_title = $link['title'];
-										$link_target = $link['target'] ? $link['target'] : '_self';
-									?>
-										<a class="button btn btn-primary btn-lg cwc-cta1" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-									<?php endif; ?>
-
-									<?php
-									$link = get_sub_field('cwc_cta2');
-									if ($link):
-										$link_url = $link['url'];
-										$link_title = $link['title'];
-										$link_target = $link['target'] ? $link['target'] : '_self';
-									?>
-										<a class="button btn btn-outline-light btn-lg cwc-cta2" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
-									<?php endif; ?>
-								</div>
-							</div>
+					<?php if (get_sub_field('cwc_description')): ?>
+						<div class="fwc-description">
+							<p><?php echo get_sub_field('cwc_description'); ?></p>
 						</div>
+					<?php endif ?>
+
+					<div class="cwc-actions d-flex flex-wrap justify-content-center align-items-center">
+						<?php
+						$link = get_sub_field('cwc_cta1');
+						if ($link):
+							$link_url = $link['url'];
+							$link_title = $link['title'];
+							$link_target = $link['target'] ? $link['target'] : '_self';
+						?>
+							<a class="fwc-cta1" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
+						<?php endif; ?>
+
+						<?php
+						$link = get_sub_field('cwc_cta2');
+						if ($link):
+							$link_url = $link['url'];
+							$link_title = $link['title'];
+							$link_target = $link['target'] ? $link['target'] : '_self';
+						?>
+							<a class="fwc-cta2" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
+						<?php endif; ?>
 					</div>
 				</div>
 			</section>
