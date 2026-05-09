@@ -64,7 +64,7 @@
 		</div>
 	</div>
 	
-	<div class="header-inner sh-sticky-wrap">
+	<div class="header-inner">
 
 		<nav class="navbar navbar-expand-lg navbar-dark">
 			<div class="container">

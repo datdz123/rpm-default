@@ -4202,28 +4202,31 @@
 
 		<?php elseif (get_row_layout() == 'video_section_module'): ?>
 			<?php
-			$vs_title     = get_sub_field('vs_section_title') ?: 'See Our Work in Action';
-			$vs_text      = get_sub_field('vs_section_text');
+			$vs_title     = get_sub_field('vs_section_title');
 			$vs_thumbnail = get_sub_field('vs_thumbnail');
 			$vs_video_url = get_sub_field('vs_video_url');
+			$vs_bg_color  = get_sub_field('vs_bg_color');
+			$vs_icon      = get_sub_field('vs_icon');
 			?>
-			<section class="pdf-video" aria-labelledby="pdf-video-title-<?php echo $i; ?>">
-				<div class="pdf-video__inner">
-					<header class="pdf-section-heading pdf-section-heading--center">
-						<h2 id="pdf-video-title-<?php echo $i; ?>" class="pdf-section-heading__title"><?php echo esc_html($vs_title); ?></h2>
-						<?php if ($vs_text): ?>
-							<p class="pdf-section-heading__text"><?php echo esc_html($vs_text); ?></p>
-						<?php endif; ?>
-					</header>
-
-					<a class="pdf-video__frame"
+			<section class="pdf-video" aria-labelledby="pdf-video-title-<?php echo $i; ?>" <?php if ($vs_bg_color) echo 'style="background-color: ' . esc_attr($vs_bg_color) . ';"'; ?>>
+				<div class="pdf-video__inner container text-center">
+					<a class="pdf-video__frame position-relative d-inline-block w-100"
 						href="<?php echo $vs_video_url ? esc_url($vs_video_url) : '#'; ?>"
 						aria-label="Play video">
 						<?php if ($vs_thumbnail): ?>
-							<img src="<?php echo esc_url($vs_thumbnail); ?>" alt="<?php echo esc_html($vs_title); ?>">
+							<img src="<?php echo esc_url($vs_thumbnail); ?>" alt="<?php echo esc_attr(strip_tags($vs_title)); ?>" class="w-100 h-auto">
 						<?php endif; ?>
 						<span class="pdf-video__overlay" aria-hidden="true"></span>
-						<span class="pdf-video__play" aria-hidden="true"></span>
+						<div class="pdf-video__content">
+							<?php if ($vs_icon): ?>
+								<img src="<?php echo esc_url($vs_icon); ?>" alt="Play" class="pdf-video__play-icon" aria-hidden="true">
+							<?php else: ?>
+								<span class="pdf-video__play" aria-hidden="true"></span>
+							<?php endif; ?>
+							<?php if ($vs_title): ?>
+								<h2 id="pdf-video-title-<?php echo $i; ?>" class="pdf-video__title text-white m-0"><?php echo $vs_title; ?></h2>
+							<?php endif; ?>
+						</div>
 					</a>
 				</div>
 			</section>
