@@ -11398,18 +11398,19 @@ a.top-banner-close {
   background-size: cover;
   color: $pdf-color-on-dark;
   display: flex;
-  min-height: rem(420);
+  min-height: rem(244);
   overflow: hidden;
-  padding: $pdf-section-padding-y $pdf-gutter;
+  padding: rem(48) 0;
   position: relative;
-  text-align: center;
+  text-align: left;
 }
 
 .fullwidth-cta1::before {
   background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.18) 0%,
-    rgba(0, 0, 0, 0.68) 100%
+    90deg,
+    rgba(10, 12, 18, 0.74) 0%,
+    rgba(10, 12, 18, 0.56) 45%,
+    rgba(10, 12, 18, 0.48) 100%
   );
   content: "";
   inset: 0;
@@ -11422,9 +11423,9 @@ a.top-banner-close {
 
 .fullwidth-cta1 > .container {
   margin: 0 auto;
-  max-width: rem(760);
-  padding-left: 0;
-  padding-right: 0;
+  max-width: rem(1170);
+  padding-left: rem(24);
+  padding-right: rem(24);
   position: relative;
   z-index: 1;
 }
@@ -11432,49 +11433,54 @@ a.top-banner-close {
 .fullwidth-cta1 .fwc-heading {
   color: $pdf-color-on-dark;
   font-family: $pdf-font-family;
-  font-size: $pdf-heading-size;
-  font-weight: $pdf-heading-weight;
-  line-height: $pdf-heading-line-height;
-  margin: 0 0 rem(16);
+  font-size: rem(24);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 rem(10);
+  max-width: rem(420);
 }
 
 .fullwidth-cta1 .fwc-description {
   color: $pdf-color-on-dark;
   font-family: $pdf-font-family;
-  font-size: rem(18);
+  font-size: rem(11);
   font-weight: $pdf-body-weight;
-  line-height: rem(28);
-  margin: 0 auto rem(32);
-  max-width: rem(680);
+  line-height: 1.5;
+  margin: 0 0 rem(18);
+  max-width: rem(560);
 }
 
 .fullwidth-cta1 .fwc-description p {
-  margin-bottom: rem(12);
+  margin-bottom: rem(8);
 }
 
 .fullwidth-cta1 .fwc-cta1,
 .fullwidth-cta1 .fwc-cta2 {
-  border-radius: $pdf-radius-sm;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: $pdf-font-family;
-  font-size: $pdf-button-size-lg;
-  font-weight: $pdf-link-weight;
-  line-height: $pdf-button-line-height-lg;
-  margin: 0 rem(8);
-  padding: rem(12) rem(16);
+  font-size: rem(12);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 rem(8) 0 0;
+  min-width: rem(128);
+  padding: rem(10) rem(18);
   text-decoration: none;
 }
 
 .fullwidth-cta1 .fwc-cta1 {
-  background: $pdf-color-primary;
-  border: rem(1) solid $pdf-color-primary;
-  color: $pdf-color-on-dark;
+  background: #fff;
+  border: rem(1) solid #fff;
+  color: #8b1e20;
 }
 
 .fullwidth-cta1 .fwc-cta1:hover,
 .fullwidth-cta1 .fwc-cta1:focus {
-  background: $pdf-color-primary-dark;
-  border-color: $pdf-color-primary-dark;
-  color: $pdf-color-on-dark;
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.88);
+  color: #8b1e20;
 }
 
 .fullwidth-cta1 .fwc-cta2 {
@@ -11500,8 +11506,22 @@ a.top-banner-close {
   }
 
   .fullwidth-cta1 {
-    min-height: rem(360);
-    padding: $pdf-section-padding-y-md $pdf-gutter;
+    min-height: rem(260);
+    padding: rem(40) 0;
+  }
+
+  .fullwidth-cta1 > .container {
+    padding-left: rem(20);
+    padding-right: rem(20);
+  }
+
+  .fullwidth-cta1 .fwc-heading {
+    font-size: rem(22);
+  }
+
+  .fullwidth-cta1 .fwc-description {
+    font-size: rem(12);
+    max-width: rem(520);
   }
 }
 
@@ -11527,13 +11547,13 @@ a.top-banner-close {
 
   .fullwidth-cta1 {
     background-attachment: scroll;
-    min-height: rem(340);
-    padding: $pdf-section-padding-y-sm rem(16);
+    min-height: rem(280);
+    padding: rem(32) 0;
   }
 
   .fullwidth-cta1 .fwc-heading {
-    font-size: $pdf-heading-size-sm;
-    line-height: $pdf-heading-line-height-sm;
+    font-size: rem(20);
+    line-height: 1.25;
   }
 
   .fullwidth-cta1 .fwc-cta1,
@@ -11541,6 +11561,7 @@ a.top-banner-close {
     display: flex;
     justify-content: center;
     margin: rem(8) 0 0;
+    min-width: 0;
     width: 100%;
   }
 }
@@ -11580,18 +11601,19 @@ a.top-banner-close {
   background-size: cover;
   color: $pdf-color-on-dark;
   display: flex;
-  min-height: rem(420);
+  min-height: rem(244);
   overflow: hidden;
-  padding: $pdf-section-padding-y $pdf-gutter;
+  padding: rem(48) 0;
   position: relative;
-  text-align: center;
+  text-align: left;
 }
 
 .fullwidth-cta1::before {
   background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.18) 0%,
-    rgba(0, 0, 0, 0.68) 100%
+    90deg,
+    rgba(10, 12, 18, 0.74) 0%,
+    rgba(10, 12, 18, 0.56) 45%,
+    rgba(10, 12, 18, 0.48) 100%
   );
   content: "";
   inset: 0;
@@ -11604,9 +11626,9 @@ a.top-banner-close {
 
 .fullwidth-cta1 > .container {
   margin: 0 auto;
-  max-width: rem(760);
-  padding-left: 0;
-  padding-right: 0;
+  max-width: rem(1170);
+  padding-left: rem(24);
+  padding-right: rem(24);
   position: relative;
   z-index: 1;
 }
@@ -11614,49 +11636,54 @@ a.top-banner-close {
 .fullwidth-cta1 .fwc-heading {
   color: $pdf-color-on-dark;
   font-family: $pdf-font-family;
-  font-size: $pdf-heading-size;
-  font-weight: $pdf-heading-weight;
-  line-height: $pdf-heading-line-height;
-  margin: 0 0 rem(16);
+  font-size: rem(24);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 rem(10);
+  max-width: rem(420);
 }
 
 .fullwidth-cta1 .fwc-description {
   color: $pdf-color-on-dark;
   font-family: $pdf-font-family;
-  font-size: rem(18);
+  font-size: rem(11);
   font-weight: $pdf-body-weight;
-  line-height: rem(28);
-  margin: 0 auto rem(32);
-  max-width: rem(680);
+  line-height: 1.5;
+  margin: 0 0 rem(18);
+  max-width: rem(560);
 }
 
 .fullwidth-cta1 .fwc-description p {
-  margin-bottom: rem(12);
+  margin-bottom: rem(8);
 }
 
 .fullwidth-cta1 .fwc-cta1,
 .fullwidth-cta1 .fwc-cta2 {
-  border-radius: $pdf-radius-sm;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: $pdf-font-family;
-  font-size: $pdf-button-size-lg;
-  font-weight: $pdf-link-weight;
-  line-height: $pdf-button-line-height-lg;
-  margin: 0 rem(8);
-  padding: rem(12) rem(16);
+  font-size: rem(12);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 rem(8) 0 0;
+  min-width: rem(128);
+  padding: rem(10) rem(18);
   text-decoration: none;
 }
 
 .fullwidth-cta1 .fwc-cta1 {
-  background: $pdf-color-primary;
-  border: rem(1) solid $pdf-color-primary;
-  color: $pdf-color-on-dark;
+  background: #fff;
+  border: rem(1) solid #fff;
+  color: #8b1e20;
 }
 
 .fullwidth-cta1 .fwc-cta1:hover,
 .fullwidth-cta1 .fwc-cta1:focus {
-  background: $pdf-color-primary-dark;
-  border-color: $pdf-color-primary-dark;
-  color: $pdf-color-on-dark;
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 0.88);
+  color: #8b1e20;
 }
 
 .fullwidth-cta1 .fwc-cta2 {
@@ -11682,8 +11709,22 @@ a.top-banner-close {
   }
 
   .fullwidth-cta1 {
-    min-height: rem(360);
-    padding: $pdf-section-padding-y-md $pdf-gutter;
+    min-height: rem(260);
+    padding: rem(40) 0;
+  }
+
+  .fullwidth-cta1 > .container {
+    padding-left: rem(20);
+    padding-right: rem(20);
+  }
+
+  .fullwidth-cta1 .fwc-heading {
+    font-size: rem(22);
+  }
+
+  .fullwidth-cta1 .fwc-description {
+    font-size: rem(12);
+    max-width: rem(520);
   }
 }
 
@@ -11709,13 +11750,13 @@ a.top-banner-close {
 
   .fullwidth-cta1 {
     background-attachment: scroll;
-    min-height: rem(340);
-    padding: $pdf-section-padding-y-sm rem(16);
+    min-height: rem(280);
+    padding: rem(32) 0;
   }
 
   .fullwidth-cta1 .fwc-heading {
-    font-size: $pdf-heading-size-sm;
-    line-height: $pdf-heading-line-height-sm;
+    font-size: rem(20);
+    line-height: 1.25;
   }
 
   .fullwidth-cta1 .fwc-cta1,
@@ -11723,6 +11764,7 @@ a.top-banner-close {
     display: flex;
     justify-content: center;
     margin: rem(8) 0 0;
+    min-width: 0;
     width: 100%;
   }
 }
@@ -11750,13 +11792,26 @@ a.top-banner-close {
  Video Section Custom (video_section_module)
 =========================================================================*/
 .pdf-video {
-  padding: rem(60) 0;
+  padding: rem(80) 0;
+
+  .pdf-video__inner {
+    max-width: rem(1170);
+  }
 
   .pdf-video__frame {
-    max-width: rem(900);
+    max-width: rem(1024);
     text-decoration: none;
     position: relative;
     display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: rem(24);
+    box-shadow: 0 rem(24) rem(60) rgba(14, 30, 57, 0.18);
+  }
+
+  .pdf-video__frame img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
   }
 
   .pdf-video__content {
@@ -11766,7 +11821,17 @@ a.top-banner-close {
     transform: translate(-50%, -50%);
     z-index: 10;
     width: 100%;
+    padding: rem(32);
     pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .pdf-video__overlay {
+    background: linear-gradient(180deg, rgba(11, 24, 45, 0.16) 0%, rgba(11, 24, 45, 0.54) 100%);
   }
 
   .pdf-video__play,
@@ -11774,14 +11839,69 @@ a.top-banner-close {
     position: static;
     display: inline-block;
     transform: none;
-    margin-bottom: rem(15);
-    max-width: rem(80);
+    margin-bottom: rem(24);
+    max-width: rem(88);
   }
 
   .pdf-video__title {
-    font-size: rem(50.4);
+    max-width: rem(760);
+    font-size: rem(50);
     font-weight: 500;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    line-height: 1.4;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    text-shadow: 0 rem(4) rem(24) rgba(0, 0, 0, 0.35);
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding: rem(64) rem(16);
+
+    .pdf-video__frame {
+      border-radius: rem(20);
+    }
+
+    .pdf-video__title {
+      font-size: rem(40);
+      max-width: rem(680);
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: rem(48) rem(16);
+
+    .pdf-video__content {
+      padding: rem(24);
+    }
+
+    .pdf-video__play,
+    .pdf-video__play-icon {
+      margin-bottom: rem(16);
+      max-width: rem(72);
+    }
+
+    .pdf-video__title {
+      font-size: rem(30);
+      line-height: 1.24;
+      max-width: rem(520);
+    }
+  }
+
+  @media (max-width: 575px) {
+    .pdf-video__frame {
+      border-radius: rem(16);
+    }
+
+    .pdf-video__content {
+      padding: rem(20);
+    }
+
+    .pdf-video__play,
+    .pdf-video__play-icon {
+      max-width: rem(56);
+    }
+
+    .pdf-video__title {
+      font-size: rem(24);
+      max-width: rem(320);
+    }
   }
 }
