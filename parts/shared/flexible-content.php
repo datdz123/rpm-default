@@ -537,7 +537,7 @@
 			</section>
 
 		<?php elseif (get_row_layout() == 'carousel_with_content'): ?>
-			<section class="fullwidth-cta1" id="carousel_with_content<?php echo $i ?>" <?php if (get_sub_field('cwc_bg')): ?>style="background-image: url(<?php echo get_sub_field('cwc_bg') ?>);" <?php endif; ?>>
+			<section class="fullwidth-cta1 carousel_with_content" id="carousel_with_content<?php echo $i ?>" <?php if (get_sub_field('cwc_bg')): ?>style="background-image: url(<?php echo get_sub_field('cwc_bg') ?>);" <?php endif; ?>>
 				<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : '' ?>">
 					
 					<?php if (get_sub_field('cwc_title')): ?>
@@ -4373,7 +4373,7 @@
 			$fwcf_cta2    = get_sub_field('fwcf_cta2');
 			?>
 			<?php if ($fwcf_show): ?>
-				<section class="fullwidth-cta1<?php echo $fwcf_para ? ' fixed-bg' : ''; ?>"
+				<section class="fullwidth-cta1 fullwidth-cta-fig<?php echo $fwcf_para ? ' fixed-bg' : ''; ?>"
 					id="fullwidth-cta1-<?php echo $i; ?>"
 					<?php if ($fwcf_bg): ?>style="background-image: url(<?php echo esc_url($fwcf_bg); ?>);" <?php endif; ?>>
 					<div class="container">
