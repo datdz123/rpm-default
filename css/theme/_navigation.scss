@@ -294,6 +294,11 @@
 
       .nav-link {
         color: $navbar-dark-nav-color;
+
+        @include media-breakpoint-down(md) {
+          color: $nav-color;
+        }
+
         &:hover,
         &:focus {
           color: $navbar-dark-nav-hover-color;
@@ -338,6 +343,9 @@
   }
   .m-subnav-arrow:after {
     color: $navbar-dark-nav-color;
+    @include media-breakpoint-down(md) {
+      color: $nav-color;
+    }
 
     &:hover,
     &:focus {

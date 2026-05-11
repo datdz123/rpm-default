@@ -1,102 +1,15 @@
-/*================ Header styling ========================*/
-.site-header {
+@import "variables";
+@import "mixins";
 
-	@include media-breakpoint-down(md){
-		overflow-x: hidden;
-	}
-
-	@include media-breakpoint-up(mq){
-		.navbar-collapse {
-			flex-grow: 0;
-		}
-	}
-}
-
-.sh-sticky-wrap.stuck {
-  @include media-breakpoint-up(md) {
-	  width: 100%;
-	  position: fixed;
-	  z-index: 99;
-	  top: 0;
-	  left: 0;
-	  background-color: $white;
-	  box-shadow: 0px 3px 6.93px 0.07px rgba(40, 40, 40, 0.44);
-	  transition: none;
-  }
-}
-
-.custom-logo-link {
-	@include media-breakpoint-down(md) {
-		max-width: 50%;
-	}
-}
-
-.site-logo,
-.navbar-brand {
-	@include media-breakpoint-down(sm) {
-		margin: 0 auto rem(15);
-	}
-}
-
-.site-logo {
-	max-width: rem(350);
-}
-
-.utility-nav {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	@include media-breakpoint-up(lg) {
-		order: 2;
-	}
-}
-.sh-email{
-	margin-right: rem(16);
-}
-.sh-ph,
-.sh-email {
-	
-	font-size: rem(16);
-	color: white;
-	i,
-	.material-icons {
-		font-size: rem(24);
-		color: white;
-		vertical-align: middle;
-	}
-
-	a {
-		display: inline-block;
-		color: $white;
-		&:hover,
-		&:focus{
-			opacity: .9;
-			color: $white;
-		}
-	}
-
-	span:not(.material-icons) {
-		display: none;
-	}
-}
-
-.sh-ph a {
-	margin-top: rem(3);
-}
-
-.social-icons {
+.sh-email,
+.sh-ph {
   a {
-    display: inline-block;
-    color: $primary;
-    font-size: rem(20);
-    text-align: center;
-    text-decoration: none;
-    @include transition(opacity .2s);
-    vertical-align: middle;
-
+    span {
+      display: none;
+    }
+    
     i,
-	.material-icons {
-      display: inline-block;
+    .material-icons {
       vertical-align: middle;
     }
 
@@ -265,15 +178,6 @@
 		}
 
   	}
-	/*@include media-breakpoint-up(md) {
-		.sh-ph,
-		.sh-email {
-			span {
-				display: inline;
-			}
-		}
-	}*/
-
 }
 
 
@@ -504,52 +408,319 @@
 	z-index: 1030;
 
 	.top-line {
-		background-color: $pdf-color-footer-bottom;
-		border-bottom: 2px solid $secondary;
+		background-color: $h6-top-bg;
+		border-bottom: none;
+		padding: rem(13) 0;
+		display: flex;
+		align-items: center;
 		
+		.iso-text {
+			color: white;
+			font-weight: 700;
+			font-size: rem(13.8);
+			text-transform: uppercase;
+			
+			img {
+				max-height: 30px;
+				width: auto;
+			}
+		}
+
 		.sh-email, .sh-ph {
 			a {
-				color: $white;
+				color: white;
+				font-style: italic;
+				font-weight: 600;
+				font-size: rem(14);
+				text-decoration: none;
+				transition: opacity 0.3s ease;
+
+				.fa, .material-icons {
+					color: white;
+					font-size: rem(18);
+					font-style: normal;
+				}
+
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+		}
+
+		#top-line-menu {
+			.nav-link {
+				color: white;
+				font-weight: 600;
+				font-size: rem(14);
+				&:hover {
+					color: $pdf-color-primary;
+				}
 			}
 		}
 	}
 
-	.iso-text {
-		color: $white;
-		font-weight: 700;
-		font-size: rem(14);
+	.header-inner {
+		background: $h6-glass-bg;
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.12);
+		transition: all 0.3s ease;
+		
+		.navbar {
+			padding: rem(16) 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+			.container {
+				flex-wrap: nowrap !important;
+				
+				@include media-breakpoint-down(sm) {
+					flex-wrap: wrap !important;
+					padding-left: rem(15) !important;
+					padding-right: rem(15) !important;
+					justify-content: center;
+				}
+			}
+
+			@include media-breakpoint-down(sm) {
+				padding: rem(5) 0;
+			}
+		}
+
+		// Force Hamburger Menu below 1280px
+		@media (max-width: 1279px) {
+			.navbar-collapse:not(.show) {
+				display: none !important;
+			}
+			.navbar-toggler {
+				display: inline-block !important;
+			}
+		}
+
+		@media (min-width: 1280px) {
+			.navbar-collapse {
+				display: flex !important;
+				flex-basis: auto;
+			}
+			.navbar-toggler {
+				display: none !important;
+			}
+		}
+
+		.navbar-brand.site-logo {
+			width: rem(150);
+			margin: 0;
+
+			@media (max-width: 1279px) {
+				width: rem(130);
+			}
+
+			@include media-breakpoint-down(sm) {
+				width: rem(110);
+				margin: 0 auto rem(10) !important;
+				display: block;
+				text-align: center;
+			}
+			
+			img {
+				height: 84px !important;
+				width: 150px !important;
+				min-height: 84px;
+				min-width: 150px;
+				object-fit: contain;
+				background: transparent !important;
+				
+				@media (max-width: 1279px) {
+					height: 72px !important;
+					width: 130px !important;
+					min-height: 72px;
+					min-width: 130px;
+				}
+				
+				@include media-breakpoint-down(sm) {
+					height: 60px !important;
+					width: 110px !important;
+					min-height: 60px;
+					min-width: 110px;
+				}
+			}
+		}
+
+		.navbar-collapse {
+			flex-grow: 0;
+			margin-left: auto;
+		}
 	}
 
-	.header-inner {
-		background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+	.main-menu {
+		.navbar-nav {
+			gap: $h6-item-spacing;
+		}
+		.nav-link {
+			color: white;
+			font-weight: 600;
+			font-size: rem(16);
+			padding: rem(10) $h6-item-spacing !important;
+			transition: color 0.3s ease;
+			
+			&:hover, &:focus {
+				color: $pdf-color-primary;
+			}
+		}
+	}
+
+	.utility-nav {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+
+		@include media-breakpoint-up(md) {
+			gap: rem(16);
+			margin-left: rem(20);
+			
+			.sh-search {
+				margin: 0 !important; // override mx-md-3
+			}
+			
+			.btn {
+				padding: rem(6) rem(12); // Adjust for 2px border to make total padding ~8px visual
+				border-radius: 3px;
+				font-size: rem(16);
+				font-weight: 600;
+				line-height: rem(24);
+				height: auto;
+			}
+			
+			.btn-alt2:not(.btn-primary) {
+				border: 2px solid $white;
+				background: transparent;
+				color: $white;
+				
+				&:hover, &:focus {
+					background: $white;
+					color: $pdf-color-primary;
+				}
+			}
+			
+			.btn-primary {
+				background: $pdf-color-primary;
+				border: 2px solid $pdf-color-primary;
+				color: $white;
+				
+				&:hover, &:focus {
+					background: darken($pdf-color-primary, 10%);
+					border-color: darken($pdf-color-primary, 10%);
+				}
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			background-color: $h6-top-bg;
+			width: calc(100% + 30px) !important;
+			margin: 0 -15px !important;
+			padding: rem(6) rem(10);
+			flex-wrap: nowrap;
+			justify-content: center; // Center items on mobile bar
+			gap: rem(6);
+
+			&:after,
+			&:before {
+				display: none !important;
+			}
+
+			.navbar-toggler,
+			.sh-ph,
+			.sh-email,
+			.sh-search {
+				flex: 0 0 auto;
+				margin: 0 !important;
+				padding: 0 rem(2) !important;
+				
+				.fa, .material-icons {
+					font-size: rem(14) !important;
+				}
+			}
+
+			.sh-contact-mob-cta,
+			.sh-rfq-mob-cta {
+				flex: 0 0 auto; // Width = text
+				margin: 0 !important;
+				height: rem(30) !important;
+				padding: 0 rem(10) !important;
+				font-size: rem(10) !important;
+				text-align: center;
+				white-space: nowrap;
+				line-height: rem(28);
+				border-width: 1px !important;
+				min-width: 0;
+			}
+		}
 	}
 
 	.search-form-tigger {
-		color: $white;
+		color: white;
+		font-weight: 600;
+		font-size: rem(16);
+		display: flex;
+		align-items: center;
+		gap: rem(6);
+		transition: color 0.3s ease;
+		line-height: 1;
+
+		.fa, .material-icons {
+			font-size: rem(24);
+		}
+
+		span:not(.material-icons):not(.fa) {
+			display: inline-block;
+			@include media-breakpoint-down(sm) {
+				display: none;
+			}
+		}
+
 		@include media-breakpoint-up(md) {
-			color: $white;
 			&:hover, &:focus {
-				color: $white;
-				opacity: 0.8;
+				color: $pdf-color-primary;
 			}
 		}
 	}
 
 	.btn-alt2 {
 		background-color: transparent;
-		color: $white;
-		border: 1px solid $white;
+		color: white;
+		border: 2px solid white;
+		font-weight: 700;
+		border-radius: 3px;
+		height: 48px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 8px 12px;
+		text-transform: capitalize;
+		transition: all 0.3s ease;
+		white-space: nowrap;
 		
 		&:hover, &:focus {
-			background-color: $white;
-			color: $black;
+			background-color: white;
+			color: #1a1a1a;
 		}
 	}
 
 	.btn-primary {
 		background-color: $pdf-color-primary;
 		border-color: $pdf-color-primary;
-		color: $white;
+		color: white;
+		font-weight: 700;
+		border-radius: 3px;
+		height: 48px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 rem(20);
+		text-transform: capitalize;
+		transition: all 0.3s ease;
+		white-space: nowrap;
 
 		&:hover, &:focus {
 			background-color: $pdf-color-primary-dark;
@@ -558,37 +729,68 @@
 	}
 
 	@include media-breakpoint-up(md) {
-		.header-inner {
-			.container {
-				flex-wrap: nowrap;
-			}
-		}
-
 		.sh-email, .sh-ph {
 			span:not(.material-icons){
 				display: inline-block;
 				vertical-align: middle;
 			}
 		}
+	}
+}
 
-		.utility-nav {
-			margin-left: rem(30);
+// Sticky State for Header 6
+.sh-sticky-wrap.stuck {
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	width: 100% !important;
+	z-index: 1050 !important;
+	animation: slideDown 0.3s ease-out;
+	
+	.header6 {
+		position: relative !important;
+		
+		.header-inner {
+			background: $h6-sticky-bg !important; 
+			backdrop-filter: blur(10px) !important;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+			
+			.navbar {
+				padding: rem(10) 0 !important;
+			}
+		}
+
+		.main-menu .nav-link {
+			color: white !important;
+
+			&:hover {
+				color: $pdf-color-primary !important;
+			}
+		}
+
+		.search-form-tigger {
+			color: white !important;
+
+			&:hover {
+				color: $pdf-color-primary !important;
+			}
+		}
+
+		.btn-alt2 {
+			border-color: white !important;
+			color: white !important;
+
+			&:hover {
+				background: white !important;
+				color: #1a1a1a !important;
+			}
 		}
 	}
+}
 
-	@include media-breakpoint-up(lg) {
-		.utility-nav {
-			margin-left: 0;
-		}
-	}
-
-	@media (max-width: 450px) {
-		.sh-rfq-mob-cta,
-		.sh-contact-mob-cta {
-			padding-left: rem(10);
-			padding-right: rem(10);
-		}
-	}
+@keyframes slideDown {
+	from { transform: translateY(-100%); }
+	to { transform: translateY(0); }
 }
 
 .header7 {
@@ -599,16 +801,26 @@
 		}
 	}
 	.search-form-tigger {
-	color: $white;
-		.material-icons {
+		display: flex;
+		align-items: center;
+		gap: rem(4);
+		color: $white;
+		font-weight: 600;
+		font-size: rem(16);
+		
+		i, .material-icons {
+			font-size: rem(24);
+			margin-right: 0 !important; // override mr-2 from PHP
 			vertical-align: middle;
 		}
+		
 		&:focus,
 		&:hover {
 			color: $white;
 			opacity: 0.8;
 		}
 	}
+	
 	@include media-breakpoint-up(md) {
 		.header-inner {
 			.container {
@@ -624,14 +836,19 @@
 		}
 
 		.utility-nav {
-			margin-left: rem(30);
 			.navbar-toggler {
-				margin-right: rem(30);
+				margin-right: rem(15); // Adjust gap for hamburger
+				padding: 0; // Remove extra padding to align better
+				
+				i {
+					font-size: rem(24);
+					color: $white;
+				}
 			}
 		}
 	}
 
-	@include media-breakpoint-up(lg) {
+	@media (min-width: 1280px) {
 		.site-logo {
 			display: none;
 			&.middle-site-logo {
@@ -640,10 +857,12 @@
 		}
 
 		.site-nav-container {
-			width: calc(100% - 220px);
 			display: flex;
-    	align-items: center;
-    	justify-content: space-between;
+			align-items: center;
+			margin-left: auto; // Push to right
+			width: auto;
+			justify-content: flex-end;
+			gap: rem(20);
 		}
 
 		.left-main-menu {
@@ -654,6 +873,5 @@
 			margin-left: rem(30);
 		}
 	}
-
 	
 }

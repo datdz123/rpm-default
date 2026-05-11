@@ -13116,6 +13116,31 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_rs_background_image",
+                            "label": "Background Image",
+                            "name": "rs_background_image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Background image for this section",
+                            "required": false,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
                             "key": "field_rs_section_title",
                             "label": "Section Title",
                             "name": "rs_section_title",
@@ -13581,6 +13606,31 @@
                                 "id": ""
                             },
                             "return_format": "array"
+                        },
+                        {
+                            "key": "field_csit_bg_img",
+                            "label": "Background Image",
+                            "name": "csit_bg_img",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": false,
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": 0,
+                            "min_height": 0,
+                            "min_size": 0,
+                            "max_width": 0,
+                            "max_height": 0,
+                            "max_size": 0,
+                            "mime_types": ""
                         }
                     ],
                     "min": "",
@@ -13790,7 +13840,7 @@
                                     "required": false,
                                     "conditional_logic": false,
                                     "wrapper": {
-                                        "width": "50",
+                                        "width": "33",
                                         "class": "",
                                         "id": ""
                                     },
@@ -13811,7 +13861,7 @@
                                     "required": false,
                                     "conditional_logic": false,
                                     "wrapper": {
-                                        "width": "50",
+                                        "width": "33",
                                         "class": "",
                                         "id": ""
                                     },
@@ -13825,6 +13875,25 @@
                                     "max_height": 0,
                                     "max_size": 0,
                                     "mime_types": "",
+                                    "parent_repeater": "field_iws_industries"
+                                },
+                                {
+                                    "key": "field_iws_industry_image_hover",
+                                    "label": "Hover Image",
+                                    "name": "image_hover",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": false,
+                                    "wrapper": {
+                                        "width": "34",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "url",
+                                    "preview_size": "medium",
+                                    "library": "all",
                                     "parent_repeater": "field_iws_industries"
                                 },
                                 {
@@ -13846,6 +13915,23 @@
                                     "new_lines": "",
                                     "maxlength": "",
                                     "placeholder": "",
+                                    "parent_repeater": "field_iws_industries"
+                                },
+                                {
+                                    "key": "field_iws_industry_link",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "aria-label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": false,
+                                    "conditional_logic": false,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
                                     "parent_repeater": "field_iws_industries"
                                 }
                             ]

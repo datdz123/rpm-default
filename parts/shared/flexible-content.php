@@ -4066,26 +4066,68 @@
 								$right_col = array_slice($chunk, 2, 3);
 							?>
 								<div class="pdf-industries__column">
-									<?php foreach ($left_col as $industry): ?>
-										<article class="pdf-industry-card pdf-industry-card--large" tabindex="0"
-											style="--industry-image: url('<?php echo esc_url($industry['image']); ?>');">
+									<?php foreach ($left_col as $industry): 
+										$link        = $industry['link'] ?? null;
+										$image_hover = $industry['image_hover'] ?? '';
+									?>
+										<article class="pdf-industry-card pdf-industry-card--large" tabindex="0">
+											<div class="pdf-industry-card__image" style="--industry-image: url('<?php echo esc_url($industry['image']); ?>');"></div>
+											<?php if ($image_hover): ?>
+												<div class="pdf-industry-card__image-hover" style="--industry-image-hover: url('<?php echo esc_url($image_hover); ?>');"></div>
+											<?php endif; ?>
+											
 											<div class="pdf-industry-card__content">
 												<h3 class="pdf-industry-card__title"><?php echo esc_html($industry['title']); ?></h3>
-												<p class="pdf-industry-card__description"><?php echo esc_html($industry['description'] ?? ''); ?></p>
+												<?php if (!empty($industry['description'])): ?>
+													<div class="pdf-industry-card__hover-content">
+														<p class="pdf-industry-card__description"><?php echo esc_html($industry['description']); ?></p>
+														<?php if ($link): ?>
+															<span class="pdf-industry-card__button"><?php echo esc_html($link['title'] ?: 'Learn More'); ?></span>
+														<?php endif; ?>
+													</div>
+												<?php endif; ?>
 											</div>
+
+											<?php if ($link): ?>
+												<a href="<?php echo esc_url($link['url']); ?>" 
+												   target="<?php echo esc_attr($link['target'] ?: '_self'); ?>" 
+												   class="pdf-industry-card__full-link"
+												   aria-label="<?php echo esc_attr($industry['title']); ?>"></a>
+											<?php endif; ?>
 										</article>
 									<?php endforeach; ?>
 								</div>
 								
 								<?php if ($right_col): ?>
 									<div class="pdf-industries__column">
-										<?php foreach ($right_col as $industry): ?>
-											<article class="pdf-industry-card pdf-industry-card--small" tabindex="0"
-												style="--industry-image: url('<?php echo esc_url($industry['image']); ?>');">
+										<?php foreach ($right_col as $industry): 
+											$link        = $industry['link'] ?? null;
+											$image_hover = $industry['image_hover'] ?? '';
+										?>
+											<article class="pdf-industry-card pdf-industry-card--small" tabindex="0">
+												<div class="pdf-industry-card__image" style="--industry-image: url('<?php echo esc_url($industry['image']); ?>');"></div>
+												<?php if ($image_hover): ?>
+													<div class="pdf-industry-card__image-hover" style="--industry-image-hover: url('<?php echo esc_url($image_hover); ?>');"></div>
+												<?php endif; ?>
+
 												<div class="pdf-industry-card__content">
 													<h3 class="pdf-industry-card__title"><?php echo esc_html($industry['title']); ?></h3>
-													<p class="pdf-industry-card__description"><?php echo esc_html($industry['description'] ?? ''); ?></p>
+													<?php if (!empty($industry['description'])): ?>
+														<div class="pdf-industry-card__hover-content">
+															<p class="pdf-industry-card__description"><?php echo esc_html($industry['description']); ?></p>
+															<?php if ($link): ?>
+																<span class="pdf-industry-card__button"><?php echo esc_html($link['title'] ?: 'Learn More'); ?></span>
+															<?php endif; ?>
+														</div>
+													<?php endif; ?>
 												</div>
+
+												<?php if ($link): ?>
+													<a href="<?php echo esc_url($link['url']); ?>" 
+													   target="<?php echo esc_attr($link['target'] ?: '_self'); ?>" 
+													   class="pdf-industry-card__full-link"
+													   aria-label="<?php echo esc_attr($industry['title']); ?>"></a>
+												<?php endif; ?>
 											</article>
 										<?php endforeach; ?>
 									</div>
@@ -4230,11 +4272,12 @@
 
 		<?php elseif (get_row_layout() == 'resources_section_module'): ?>
 			<?php
-			$rs_title      = get_sub_field('rs_section_title') ?: 'Resources';
+			$rs_title      = get_sub_field('rs_section_title');
 			$rs_view_all   = get_sub_field('rs_view_all_link');
 			$rs_resources  = get_sub_field('rs_resources');
+			$rs_bg_image   = get_sub_field('rs_background_image');
 			?>
-			<section class="pdf-resources" aria-labelledby="pdf-resources-title-<?php echo $i; ?>">
+			<section class="pdf-resources" aria-labelledby="pdf-resources-title-<?php echo $i; ?>" <?php if ($rs_bg_image): ?>style="background-image: url('<?php echo esc_url($rs_bg_image); ?>');"<?php endif; ?>>
 				<div class="pdf-resources__inner">
 					<header class="pdf-section-heading pdf-section-heading--center">
 						<h2 id="pdf-resources-title-<?php echo $i; ?>" class="pdf-section-heading__title"><?php echo esc_html($rs_title); ?></h2>
@@ -4327,38 +4370,41 @@
 		<?php elseif (get_row_layout() == 'content_single_image_text_module'): ?>
 			<?php
 			$csit_icon_img = get_sub_field('csit_icon_img');
-			$csit_title    = get_sub_field('csit_title') ?: 'Join Our Team';
+			$csit_title    = get_sub_field('csit_title');
 			$csit_subtitle = get_sub_field('csit_subtitle');
 			$csit_desc     = get_sub_field('csit_description');
 			$csit_button   = get_sub_field('csit_button');
+			$csit_bg_img   = get_sub_field('csit_bg_img');
 			?>
-			<section class="pdf-single-image-text" aria-labelledby="pdf-single-image-text-title-<?php echo $i; ?>">
-				<div class="pdf-single-image-text__inner">
-					<div class="pdf-single-image-text__icon" aria-hidden="true">
-						<?php if ($csit_icon_img): ?>
-							<img src="<?php echo esc_url($csit_icon_img); ?>" alt="<?php echo esc_attr($csit_title); ?>" style="width: 60px; height: 60px; object-fit: contain;">
-						<?php endif; ?>
-					</div>
-
-					<h2 id="pdf-single-image-text-title-<?php echo $i; ?>" class="pdf-single-image-text__title"><?php echo esc_html($csit_title); ?></h2>
-
-					<?php if ($csit_subtitle): ?>
-						<p class="pdf-single-image-text__subtitle"><?php echo esc_html($csit_subtitle); ?></p>
-					<?php endif; ?>
-
-					<?php if ($csit_desc): ?>
-						<div class="pdf-single-image-text__description">
-							<?php echo $csit_desc; ?>
+			<section class="pdf-single-image-text" aria-labelledby="pdf-single-image-text-title-<?php echo $i; ?>" <?php if ($csit_bg_img) echo 'style="background-image: url(' . esc_url($csit_bg_img) . ');"'; ?>>
+				<div class="pdf-single-image-text__inner container text-center">
+					<?php if ($csit_icon_img): ?>
+						<div class="pdf-single-image-text__icon" aria-hidden="true">
+							<img src="<?php echo esc_url($csit_icon_img); ?>" alt="<?php echo esc_attr($csit_title); ?>">
 						</div>
 					<?php endif; ?>
 
-					<?php if ($csit_button): ?>
-						<a class="pdf-single-image-text__button"
-							href="<?php echo esc_url($csit_button['url']); ?>"
-							target="<?php echo esc_attr($csit_button['target'] ?: '_self'); ?>">
-							<?php echo esc_html($csit_button['title']); ?>
-						</a>
-					<?php endif; ?>
+					<div class="pdf-single-image-text__content">
+						<h2 id="pdf-single-image-text-title-<?php echo $i; ?>" class="pdf-single-image-text__title"><?php echo esc_html($csit_title); ?></h2>
+
+						<?php if ($csit_subtitle): ?>
+							<p class="pdf-single-image-text__subtitle"><?php echo esc_html($csit_subtitle); ?></p>
+						<?php endif; ?>
+
+						<?php if ($csit_desc): ?>
+							<div class="pdf-single-image-text__description">
+								<?php echo $csit_desc; ?>
+							</div>
+						<?php endif; ?>
+
+						<?php if ($csit_button): ?>
+							<a class="pdf-single-image-text__button"
+								href="<?php echo esc_url($csit_button['url']); ?>"
+								target="<?php echo esc_attr($csit_button['target'] ?: '_self'); ?>">
+								<?php echo esc_html($csit_button['title']); ?>
+							</a>
+						<?php endif; ?>
+					</div>
 				</div>
 			</section>
 

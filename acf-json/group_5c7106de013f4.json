@@ -261,6 +261,31 @@
             "save_other_choice": 0
         },
         {
+            "key": "field_663ed5b2f1a2c",
+            "label": "Footer Verified Badge",
+            "name": "footer_verified_badge",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Upload the verified badge image for Footer Style 3",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_64a6a52c568d9",
             "label": "Blog Page Style",
             "name": "global_blog_page_style",

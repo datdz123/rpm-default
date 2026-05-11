@@ -9,12 +9,12 @@
                 <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" title="<?php echo esc_attr($logo['alt']); ?>">
             </a>
         <?php endif;?>
-            <div class="sf-cert-badge" aria-label="Verified supplier">
-                <span class="sf-cert-badge__star" aria-hidden="true">★</span>
-                <span class="sf-cert-badge__top">Thomas</span>
-                <span class="sf-cert-badge__main">Verified</span>
-                <span class="sf-cert-badge__bottom">Supplier</span>
-            </div>
+            <?php $footer_badge = get_field('footer_verified_badge', 'option'); ?>
+            <?php if (!empty($footer_badge)): ?>
+                <div class="sf-cert-badge-img">
+                    <img src="<?php echo esc_url($footer_badge['url']); ?>" alt="<?php echo esc_attr($footer_badge['alt']); ?>">
+                </div>
+            <?php endif; ?>
             </div>
         <div class="col-lg-3 col-12 sf-menu-col">
                 <?php wp_nav_menu(array(

@@ -189,7 +189,7 @@
 
         // For nesting containers, have to redeclare for alignment purposes
         %container-nesting-#{$breakpoint} {
-          flex-wrap: nowrap;
+          // flex-wrap: nowrap;
         }
 
         > .container,
